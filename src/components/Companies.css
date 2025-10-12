@@ -1,0 +1,187 @@
+.companies {
+  background-color: var(--bg-secondary);
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.companies-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.companies-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.companies-title span {
+  color: var(--primary-color);
+}
+
+.companies-slider-wrapper {
+  position: relative;
+  padding: 20px 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Modern Infinite Scroll Animation */
+.companies-track {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  width: fit-content;
+  animation: scroll 30s linear infinite;
+}
+
+.companies-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.company-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  min-width: 180px;
+  padding: 20px 30px;
+  background-color: var(--bg-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.company-logo-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.company-logo {
+  max-width: 140px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+  transition: all var(--transition-medium);
+}
+
+.company-logo-wrapper:hover .company-logo {
+  transform: scale(1.05);
+}
+
+/* Placeholder Logo Styling */
+.company-logo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.company-logo-placeholder svg {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.company-logo-placeholder span {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.company-logo-placeholder small {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Hide slick dots and arrows */
+.companies-slider .slick-dots,
+.companies-slider .slick-arrow {
+  display: none !important;
+}
+
+/* Fade edges effect */
+.companies-slider-wrapper::before,
+.companies-slider-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.companies-slider-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg-secondary), transparent);
+}
+
+.companies-slider-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg-secondary), transparent);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .companies {
+    padding: 60px 20px;
+  }
+
+  .companies-title {
+    font-size: 1.75rem;
+    margin-bottom: 40px;
+  }
+
+  .company-logo-wrapper {
+    height: 100px;
+    padding: 15px;
+  }
+
+  .company-logo {
+    max-height: 60px;
+  }
+
+  .companies-slider-wrapper::before,
+  .companies-slider-wrapper::after {
+    width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-title {
+    font-size: 1.5rem;
+  }
+
+  .company-logo-wrapper {
+    height: 90px;
+  }
+
+  .company-logo-placeholder svg {
+    font-size: 2rem;
+  }
+
+  .company-logo-placeholder span {
+    font-size: 0.8rem;
+  }
+}

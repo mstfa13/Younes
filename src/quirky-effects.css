@@ -1,0 +1,405 @@
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
+/* Custom Cursor Trail Effect */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out;
+}
+
+.cursor-outline {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease-out;
+}
+
+/* Animated Background Blobs */
+.animated-blobs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.15;
+  animation: float 20s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  top: -200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  top: 50%;
+  right: -150px;
+  animation-delay: 7s;
+}
+
+.blob-3 {
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  bottom: -200px;
+  left: 30%;
+  animation-delay: 14s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(100px, -100px) scale(1.1);
+  }
+  66% {
+    transform: translate(-100px, 100px) scale(0.9);
+  }
+}
+
+/* Floating Geometric Shapes */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.05;
+  animation: floatShapes 15s ease-in-out infinite;
+}
+
+.shape-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  top: 20%;
+  right: 10%;
+  animation-delay: 0s;
+}
+
+.shape-square {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--secondary-color);
+  top: 60%;
+  left: 15%;
+  animation-delay: 5s;
+  transform: rotate(45deg);
+}
+
+.shape-triangle {
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 52px solid var(--accent-color);
+  top: 80%;
+  right: 20%;
+  animation-delay: 10s;
+}
+
+@keyframes floatShapes {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(180deg);
+  }
+}
+
+/* Enhanced Button Interactions */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn:hover {
+  animation: buttonPulse 1s ease-in-out infinite;
+}
+
+@keyframes buttonPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+  }
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* 3D Tilt Effect on Images */
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-out;
+}
+
+.tilt-3d:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(5deg) scale(1.02);
+}
+
+/* Magnetic Hover Effect */
+.magnetic {
+  transition: transform 0.2s ease-out;
+}
+
+/* Gradient Text Animation */
+.gradient-text-animated {
+  background: linear-gradient(
+    90deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--primary-color)
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 100% center;
+  }
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+  box-shadow: 
+    0 0 5px rgba(37, 99, 235, 0.3),
+    0 0 10px rgba(37, 99, 235, 0.2),
+    0 0 20px rgba(37, 99, 235, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-glow:hover {
+  box-shadow: 
+    0 0 10px rgba(37, 99, 235, 0.5),
+    0 0 20px rgba(37, 99, 235, 0.4),
+    0 0 40px rgba(37, 99, 235, 0.3);
+}
+
+/* Parallax Scroll Sections */
+.parallax-section {
+  transform-style: preserve-3d;
+}
+
+.parallax-layer {
+  transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Morphing Background Gradient */
+.morphing-gradient {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  background-size: 400% 400%;
+  animation: morphGradient 15s ease infinite;
+}
+
+@keyframes morphGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scroll Reveal Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Squish Click Animation */
+@keyframes squish {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95) rotate(1deg);
+  }
+}
+
+.squish-click:active {
+  animation: squish 0.3s ease;
+}
+
+/* Floating Animation for Elements */
+.float-animation {
+  animation: floatUp 3s ease-in-out infinite;
+}
+
+@keyframes floatUp {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Reveal on Hover */
+.hover-reveal {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-reveal::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.hover-reveal:hover::after {
+  left: 100%;
+}
+
+/* Section Number Indicators */
+.section-number {
+  position: absolute;
+  top: 40px;
+  left: -60px;
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  opacity: 0.05;
+  font-family: var(--font-heading);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .blob {
+    width: 250px !important;
+    height: 250px !important;
+    filter: blur(50px);
+  }
+
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+
+  .section-number {
+    display: none;
+  }
+
+  .floating-shapes {
+    display: none;
+  }
+}
