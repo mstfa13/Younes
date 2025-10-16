@@ -1,18 +1,18 @@
 :root {
-  /* Color Palette */
-  --primary-color: #2563eb;
-  --primary-dark: #1e40af;
-  --primary-light: #3b82f6;
-  --secondary-color: #10b981;
-  --accent-color: #f59e0b;
+  /* Color Palette - Tech Bytes Theme */
+  --primary-color: #7A0000;
+  --primary-dark: #5a0000;
+  --primary-light: #9a0000;
+  --secondary-color: #4A5568;
+  --accent-color: #1F2937;
   
   /* Neutral Colors */
-  --bg-color: #ffffff;
-  --bg-secondary: #f9fafb;
-  --bg-accent: #f3f4f6;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --text-light: #9ca3af;
+  --bg-color: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --bg-accent: #FFFFFF;
+  --text-primary: #1F2937;
+  --text-secondary: #4A5568;
+  --text-light: #6b7280;
   --border-color: #e5e7eb;
   
   /* Shadows */
@@ -44,12 +44,12 @@
 
 /* Dark Mode Variables (Optional) */
 [data-theme="dark"] {
-  --bg-color: #111827;
-  --bg-secondary: #1f2937;
+  --bg-color: #1F2937;
+  --bg-secondary: #111827;
   --bg-accent: #374151;
-  --text-primary: #f9fafb;
-  --text-secondary: #d1d5db;
-  --text-light: #9ca3af;
+  --text-primary: #F7F7F7;
+  --text-secondary: #9ca3af;
+  --text-light: #6b7280;
   --border-color: #374151;
 }
 
