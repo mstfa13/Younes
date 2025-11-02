@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaArrowUp } from 'react-icons/fa';
+import { FaLinkedin, FaFacebook, FaTiktok, FaYoutube, FaArrowUp } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -46,7 +46,8 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="footer-brand">
               <div className="footer-logo">
-                Ahmed<span>Younes</span>
+                <span className="footer-logo-main">TechBytes</span>
+                <span className="footer-logo-sub">by Ahmed Younes</span>
               </div>
               <p className="footer-tagline">
                 Empowering professionals to go from zero to market-ready in tech. 
@@ -54,7 +55,7 @@ const Footer = () => {
               </p>
               <div className="footer-social">
                 <a 
-                  href="https://linkedin.com/in/yourprofile" 
+                  href="https://www.linkedin.com/in/ahmed-younes-ay/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="footer-social-link"
@@ -63,29 +64,31 @@ const Footer = () => {
                   <FaLinkedin />
                 </a>
                 <a 
-                  href="https://github.com/yourprofile" 
+                  href="https://www.facebook.com/profile.php?id=61582441811249" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="footer-social-link"
-                  aria-label="GitHub"
+                  aria-label="Facebook"
                 >
-                  <FaGithub />
+                  <FaFacebook />
                 </a>
                 <a 
-                  href="https://twitter.com/yourprofile" 
+                  href="https://www.tiktok.com/@techbytes_by_younes" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="footer-social-link"
-                  aria-label="Twitter"
+                  aria-label="TikTok"
                 >
-                  <FaTwitter />
+                  <FaTiktok />
                 </a>
                 <a 
-                  href="mailto:your.email@example.com"
+                  href="https://www.youtube.com/@techbytesbyyounes"
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="footer-social-link"
-                  aria-label="Email"
+                  aria-label="YouTube"
                 >
-                  <FaEnvelope />
+                  <FaYoutube />
                 </a>
               </div>
             </div>
@@ -143,7 +146,7 @@ const Footer = () => {
           {/* Footer Bottom */}
           <div className="footer-bottom">
             <p className="footer-copyright">
-              &copy; {currentYear} <a href="#home">Ahmed Younes</a>. All rights reserved.
+              &copy; {currentYear} <a href="#home">TechBytes by Ahmed Younes</a>. All rights reserved.
             </p>
             <div className="footer-credits">
               <span className="footer-credit-item">

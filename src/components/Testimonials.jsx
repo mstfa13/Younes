@@ -1,39 +1,75 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
-import { FaQuoteLeft, FaStar, FaUser } from 'react-icons/fa';
+import { FaQuoteLeft, FaStar } from 'react-icons/fa';
 import './Testimonials.css';
 
 const Testimonials = () => {
   // Testimonials data
   const testimonials = [
     {
-      quote: "This program completely transformed my career. I went from having zero tech experience to landing a role as a Junior Project Manager at a Fortune 500 company within 6 months. The hands-on projects and mentorship were invaluable.",
-      name: "Sarah Ahmed",
-      role: "Junior Project Manager at Tech Corp",
-      avatar: null, // Replace with actual avatar path
-      rating: 5
+      quote: "TechBytes helped me expand my scope and embrace advanced tech approaches. I now lead digital innovation projects that integrate both classical and modern methodologies.",
+      name: "Amr Mohamed",
+      role: "Software Project Manager / Scrum Master at Connect Digital Solutions",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/amr-mohamed.jpg",
+      linkedin: "https://www.linkedin.com/in/amr-mohamed-0aa55810b/"
     },
     {
-      quote: "The Zero to Market-Ready program gave me the exact skills and confidence I needed. The real-world projects prepared me perfectly for interviews, and I received multiple job offers. Highly recommended!",
-      name: "Mohamed Hassan",
-      role: "IT Project Coordinator at Global Systems",
-      avatar: null,
-      rating: 5
+      quote: "I have been leading teams on a journey to incorporate technology into our workflows. I am now a better leader for having taken this course and gained practical industry insights.",
+      name: "Abdullah Khaled",
+      role: "Technical Project Manager at Digital Solutions",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/abdullah-khaled.jpg",
+      linkedin: "https://www.linkedin.com/in/abdullah-khaled-3b3372321/"
     },
     {
-      quote: "I've taken many online courses, but this program stands out. The personalized mentorship and industry insights made all the difference. I'm now working on enterprise projects I never thought I could handle.",
-      name: "Layla Ibrahim",
-      role: "Software Project Lead at Innovation Hub",
-      avatar: null,
-      rating: 5
+      quote: "Working with Ahmed transformed my career. His mentorship helped me transition to leading technical projects with confidence and strategic thinking that drives real business value.",
+      name: "Mostafa Arkam",
+      role: "Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/mostafa-arkam.jpg",
+      linkedin: "#"
     },
     {
-      quote: "As someone transitioning from a non-tech background, this program was perfect. The step-by-step approach and supportive community helped me build both technical and soft skills required in the industry.",
-      name: "Karim Mostafa",
-      role: "Agile Project Manager at Digital Solutions",
-      avatar: null,
-      rating: 5
+      quote: "The practical approach and real-world projects made all the difference. I'm now equipped with the project management skills and technical knowledge that companies are looking for.",
+      name: "Omar Kandil",
+      role: "IT Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/omar-kandil.jpg",
+      linkedin: "#"
+    },
+    {
+      quote: "Ahmed's guidance helped me understand not just the technical aspects, but also how to think strategically about technology solutions and lead teams effectively.",
+      name: "Hesham Ahmed",
+      role: "Senior Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/hesham-ahmed.jpg",
+      linkedin: "#"
+    },
+    {
+      quote: "The comprehensive training and hands-on approach at TechBytes equipped me with the skills to confidently manage complex projects and drive meaningful results in the tech industry.",
+      name: "Dalia Hassan",
+      role: "Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/dalia.jpg",
+      linkedin: "#"
+    },
+    {
+      quote: "TechBytes provided me with the technical foundation and project management expertise I needed to excel in my career. The mentorship was invaluable in shaping my professional growth.",
+      name: "Osama Kamal",
+      role: "IT Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/osama.jpg",
+      linkedin: "#"
+    },
+    {
+      quote: "The program transformed my approach to technology and project leadership. I now have the confidence and skills to tackle challenging projects and deliver exceptional results.",
+      name: "Rana Mahmoud",
+      role: "Technical Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/rana.jpg",
+      linkedin: "#"
     }
   ];
 
@@ -118,17 +154,31 @@ const Testimonials = () => {
           <Slider {...sliderSettings} className="testimonials-slider">
             {testimonials.map((testimonial, index) => (
               <div key={index}>
-                <div className="testimonial-card glass-card hover-lift scroll-reveal">
-                  {/* Quote Icon */}
-                  <div className="testimonial-quote-icon">
-                    <FaQuoteLeft />
+                <div 
+                  className={`testimonial-card glass-card hover-lift scroll-reveal ${testimonial.linkedin ? 'testimonial-card-clickable' : ''}`}
+                  onClick={() => {
+                    if (testimonial.linkedin) {
+                      window.open(testimonial.linkedin, '_blank', 'noopener,noreferrer');
+                    }
+                  }}
+                  style={testimonial.linkedin ? { cursor: 'pointer' } : {}}
+                >
+                  {/* Program Badge */}
+                  <div className="testimonial-program-badge">
+                    {testimonial.program}
                   </div>
 
-                  {/* Rating Stars */}
-                  <div className="testimonial-rating">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <FaStar key={i} />
-                    ))}
+                  {/* Professional Photo */}
+                  <div className="testimonial-image-wrapper">
+                    <div className="testimonial-image-gradient"></div>
+                    <img 
+                      src={testimonial.avatar} 
+                      alt={testimonial.name}
+                      className="testimonial-image"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
                   </div>
 
                   {/* Quote Text */}
@@ -138,22 +188,25 @@ const Testimonials = () => {
 
                   {/* Author Info */}
                   <div className="testimonial-author">
-                    <div className="testimonial-avatar">
-                      {testimonial.avatar ? (
-                        <img src={testimonial.avatar} alt={testimonial.name} />
-                      ) : (
-                        <FaUser className="testimonial-avatar-placeholder" />
-                      )}
-                    </div>
-                    <div className="testimonial-info">
-                      <div className="testimonial-name">{testimonial.name}</div>
-                      <p className="testimonial-role">{testimonial.role}</p>
-                    </div>
+                    <div className="testimonial-name">{testimonial.name}</div>
+                    <p className="testimonial-role">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
             ))}
           </Slider>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div className="testimonials-cta" variants={itemVariants}>
+          <h3 className="cta-title">Ready to Write Your Success Story?</h3>
+          <p className="cta-text">Join our next cohort and start your transformation today.</p>
+          <button 
+            className="btn btn-primary btn-large"
+            onClick={() => window.open('/register.html', '_blank', 'noopener,noreferrer')}
+          >
+            Enroll Now
+          </button>
         </motion.div>
       </div>
     </motion.section>

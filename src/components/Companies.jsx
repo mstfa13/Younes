@@ -6,7 +6,7 @@ import './Companies.css';
 const Companies = () => {
   // Company data - Using actual logo files
   const companies = [
-    { name: 'VOIS', logo: '/images/companies/VOIS_LOGO_gradient.png' },
+    { name: 'VOIS', logo: '/images/companies/vois-new.png' },
     { name: 'Valeo', logo: '/images/companies/Valeo_Logo.svg.png' },
     { name: 'Etisalat', logo: '/images/companies/etisalat-logo-freelogovectors.net_.png' },
     { name: 'El Sewedy', logo: '/images/companies/Elsewedy_Electric_Logo.svg.png' },
@@ -92,6 +92,16 @@ const Companies = () => {
             ))}
           </div>
         </div>
+
+        <motion.div className="companies-cta" variants={titleVariants}>
+          <p className="companies-cta-text">Want to bring enterprise-level training to your organization?</p>
+          <button 
+            className="btn btn-primary"
+            onClick={() => window.location.href = '/enterprise'}
+          >
+            Contact Us
+          </button>
+        </motion.div>
       </div>
     </motion.section>
   );

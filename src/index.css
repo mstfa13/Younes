@@ -1,27 +1,32 @@
 :root {
-  /* Color Palette - Tech Bytes Theme */
+  /* Color Palette - Tech Bytes Theme (from brand frame) */
   --primary-color: #7A0000;
   --primary-dark: #5a0000;
   --primary-light: #9a0000;
   --secondary-color: #4A5568;
   --accent-color: #1F2937;
   
-  /* Neutral Colors */
+  /* Neutral Colors with subtle warm tones from brand */
   --bg-color: #FFFFFF;
-  --bg-secondary: #F7F7F7;
-  --bg-accent: #FFFFFF;
+  --bg-secondary: #f8f6f6;
+  --bg-accent: #fdf9f8;
   --text-primary: #1F2937;
   --text-secondary: #4A5568;
   --text-light: #6b7280;
   --border-color: #e5e7eb;
   
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  /* Tech circuit colors from brand frame */
+  --circuit-light: rgba(255, 255, 255, 0.1);
+  --circuit-medium: rgba(122, 0, 0, 0.15);
+  --circuit-dark: rgba(90, 0, 0, 0.25);
   
-  /* Typography */
+  /* Shadows with warmer tones */
+  --shadow-sm: 0 1px 2px 0 rgba(122, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(122, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(122, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(122, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Typography - matching brand frame style */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   
@@ -35,10 +40,10 @@
   --transition-slow: 0.5s ease;
   
   /* Border Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
   --radius-full: 9999px;
 }
 
@@ -78,18 +83,22 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
 }
 
 h2 {
   font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
 }
 
 h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
 }
 
 p {
@@ -216,4 +225,49 @@ section {
 ::selection {
   background-color: var(--primary-light);
   color: white;
+}
+
+/* Tech Circuit Line Decorations - Inspired by Brand Frame */
+.tech-lines::before,
+.tech-lines::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--circuit-medium) 50%, 
+    transparent 100%);
+  height: 1px;
+  opacity: 0.4;
+}
+
+.tech-lines::before {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.tech-lines::after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Gradient overlays matching brand frame hue */
+.brand-gradient {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(250, 240, 240, 0.3) 30%,
+    rgba(220, 200, 200, 0.5) 60%,
+    rgba(180, 140, 140, 0.7) 100%
+  );
+}
+
+.brand-gradient-dark {
+  background: linear-gradient(
+    180deg,
+    rgba(30, 20, 20, 0.8) 0%,
+    rgba(80, 40, 40, 0.85) 50%,
+    rgba(122, 0, 0, 0.9) 100%
+  );
 }

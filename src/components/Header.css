@@ -43,11 +43,20 @@
   transform: scale(1.02);
 }
 
-.header-logo span {
+.header-logo-main {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header-logo-sub {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin-left: -8px;
 }
 
 .header-logo-icon {

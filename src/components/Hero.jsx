@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaUser } from 'react-icons/fa';
 import './Hero.css';
 
 const Hero = () => {
@@ -43,53 +42,71 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero" id="home">
-      {/* Decorative Elements */}
-      <div className="hero-decoration hero-decoration-1"></div>
-      <div className="hero-decoration hero-decoration-2"></div>
-
+    <section className="hero hero-modern" id="home">
       <motion.div 
-        className="hero-container"
+        className="hero-container hero-modern-container"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Left Side - Content */}
-        <div className="hero-content">
-          <motion.h1 className="hero-title scroll-reveal" variants={itemVariants}>
-            Helping You Go from <span className="gradient-text-animated">Zero to Market-Ready</span> in Tech.
+        <div className="hero-content hero-modern-content">
+          <motion.h1 className="hero-title-modern" variants={itemVariants}>
+            Learn. Lead. <span className="highlight-text">Transform.</span>
           </motion.h1>
 
-          <motion.p className="hero-subtitle" variants={itemVariants}>
-            I'm <strong>Ahmed Younes</strong>, a Software & IT Project Manager who worked with 
-            top multinational companies, helping professionals and teams deliver exceptional results.
+          <motion.p className="hero-subtitle-modern" variants={itemVariants}>
+            Build in-demand skills to unlock your potential and drive outcomes for your career and business.
           </motion.p>
 
-          <motion.div className="hero-buttons" variants={itemVariants}>
+          <motion.div className="hero-ctas" variants={itemVariants}>
             <button 
-              className="btn btn-primary magnetic squish-click neon-glow" 
-              onClick={() => scrollToSection('training')}
-              aria-label="Join the training program"
+              className="btn btn-primary hero-cta-primary"
+              onClick={() => window.open('/register.html', '_blank', 'noopener,noreferrer')}
             >
-              Join My Program
+              For Individuals
             </button>
             <button 
-              className="btn btn-secondary magnetic squish-click" 
-              onClick={() => scrollToSection('about')}
-              aria-label="See my portfolio and work"
+              className="btn btn-secondary hero-cta-secondary"
+              onClick={() => window.location.href = '/enterprise'}
             >
-              See My Work
+              For Businesses
             </button>
+          </motion.div>
+
+          {/* Trust Badge */}
+          <motion.div className="hero-trust-badge" variants={itemVariants}>
+            <div className="trust-avatars">
+              <div className="avatar-circle">
+                <img src="/images/testimonials/amr-mohamed.jpg" alt="Client" />
+              </div>
+              <div className="avatar-circle">
+                <img src="/images/testimonials/abdullah-khaled.jpg" alt="Client" />
+              </div>
+              <div className="avatar-circle">
+                <img src="/images/testimonials/mostafa-arkam.jpg" alt="Client" />
+              </div>
+              <div className="avatar-circle">
+                <img src="/images/testimonials/omar-kandil.jpg" alt="Client" />
+              </div>
+              <div className="avatar-circle">
+                <img src="/images/testimonials/hesham-ahmed.jpg" alt="Client" />
+              </div>
+            </div>
+            <div className="trust-text">
+              <div className="trust-count">500+</div>
+              <div className="trust-label">Clients Trust Ahmed Younes</div>
+            </div>
           </motion.div>
         </div>
 
-        {/* Right Side - Image */}
+        {/* Right Side - Hero Image */}
         <motion.div 
-          className="hero-image"
+          className="hero-image-panel"
           variants={imageVariants}
         >
-          <div className="hero-image-wrapper tilt-3d hover-lift float-animation">
-            <img src="/images/hero-portrait.png" alt="Ahmed Younes - Professional portrait" />
+          <div className="hero-image-frame">
+            <img src="/images/Profile.png" alt="Ahmed Younes - Professional Tech Mentor" />
           </div>
         </motion.div>
       </motion.div>

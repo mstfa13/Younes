@@ -72,12 +72,8 @@ const Training = () => {
     }
   };
 
-  // Scroll to contact section
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+  const handleEnrollClick = () => {
+    window.open('/register.html', '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -152,7 +148,7 @@ const Training = () => {
             <motion.div className="training-cta" variants={itemVariants}>
               <button 
                 className="btn btn-primary magnetic squish-click neon-glow" 
-                onClick={scrollToContact}
+                onClick={handleEnrollClick}
                 aria-label="Enroll in the training program"
               >
                 Enroll Now

@@ -1,0 +1,221 @@
+.how-it-works {
+  background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+  padding: 100px 20px;
+  position: relative;
+}
+
+.how-it-works-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.how-it-works-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.how-it-works-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.how-it-works-title {
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.how-it-works-title .highlight-text {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.how-it-works-description {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.steps-timeline {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.step-item {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 4rem;
+  font-weight: 800;
+  color: rgba(122, 0, 0, 0.08);
+  line-height: 1;
+  font-family: var(--font-heading);
+  z-index: 0;
+}
+
+.step-content {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-medium);
+}
+
+.step-content:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-icon-wrapper {
+  flex-shrink: 0;
+}
+
+.step-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 28px;
+}
+
+.step-details {
+  flex: 1;
+}
+
+.step-duration {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(122, 0, 0, 0.1);
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.step-description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.step-connector {
+  position: absolute;
+  left: 63px;
+  top: 100%;
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(180deg, var(--primary-color) 0%, rgba(122, 0, 0, 0.2) 100%);
+}
+
+.how-it-works-cta {
+  text-align: center;
+  padding: 56px 32px;
+  background: linear-gradient(135deg, rgba(122, 0, 0, 0.05) 0%, rgba(122, 0, 0, 0.02) 100%);
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--border-color);
+}
+
+.how-it-works-cta .cta-title {
+  font-size: 2rem;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.how-it-works-cta .cta-text {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 16px 36px;
+  font-size: 1.0625rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 80px 20px;
+  }
+
+  .how-it-works-header {
+    margin-bottom: 60px;
+  }
+
+  .steps-timeline {
+    margin-bottom: 60px;
+  }
+
+  .step-content {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .step-content:hover {
+    transform: translateY(-4px);
+  }
+
+  .step-connector {
+    left: 47px;
+  }
+
+  .how-it-works-cta {
+    padding: 40px 24px;
+  }
+
+  .how-it-works-cta .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn-large {
+    width: 100%;
+  }
+}

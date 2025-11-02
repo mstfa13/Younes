@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { FaBriefcase } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle scroll for header shadow effect
   useEffect(() => {
@@ -16,17 +19,19 @@ const Header = () => {
         setScrolled(false);
       }
 
-      // Update active section based on scroll position
-      const sections = ['home', 'about', 'training', 'testimonials', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      // Update active section based on scroll position (only on home page)
+      if (location.pathname === '/') {
+        const sections = ['home', 'about', 'problems', 'solutions', 'how-it-works', 'training', 'testimonials', 'faq'];
+        const scrollPosition = window.scrollY + 100;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+        for (const section of sections) {
+          const element = document.getElementById(section);
+          if (element) {
+            const { offsetTop, offsetHeight } = element;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+              setActiveSection(section);
+              break;
+            }
           }
         }
       }
@@ -34,20 +39,38 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   // Scroll to section
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    // If not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
     setMobileMenuOpen(false);
   };
@@ -83,14 +106,22 @@ const Header = () => {
       <div className="header-container">
         {/* Logo */}
         <a 
-          href="#home" 
+          href="/" 
           className="header-logo"
-          onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+          onClick={(e) => { 
+            e.preventDefault(); 
+            if (location.pathname === '/') {
+              scrollToSection('home');
+            } else {
+              navigate('/');
+            }
+          }}
         >
           <div className="header-logo-icon">
             AY
           </div>
-          Ahmed Younes
+          <span className="header-logo-main">TechBytes</span>
+          <span className="header-logo-sub">by Ahmed Younes</span>
         </a>
 
         {/* Desktop Navigation */}
@@ -107,9 +138,13 @@ const Header = () => {
             </li>
             <li>
               <a 
-                href="#about" 
-                className={`nav-link ${activeSection === 'about' ? 'active' : ''}`}
-                onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
+                href="/about" 
+                className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  navigate('/about');
+                  setMobileMenuOpen(false);
+                }}
               >
                 About
               </a>
@@ -134,18 +169,18 @@ const Header = () => {
             </li>
             <li>
               <a 
-                href="#contact" 
-                className={`nav-link ${activeSection === 'contact' ? 'active' : ''}`}
-                onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
+                href="#faq" 
+                className={`nav-link ${activeSection === 'faq' ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
               >
-                Contact
+                FAQ
               </a>
             </li>
           </ul>
 
           <button 
             className="btn btn-primary header-cta"
-            onClick={() => scrollToSection('training')}
+            onClick={() => window.open('/register.html', '_blank', 'noopener,noreferrer')}
           >
             Join Program
           </button>
@@ -177,9 +212,13 @@ const Header = () => {
           </li>
           <li>
             <a 
-              href="#about" 
-              className={`mobile-nav-link ${activeSection === 'about' ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
+              href="/about" 
+              className={`mobile-nav-link ${location.pathname === '/about' ? 'active' : ''}`}
+              onClick={(e) => { 
+                e.preventDefault(); 
+                navigate('/about');
+                setMobileMenuOpen(false);
+              }}
             >
               About
             </a>
@@ -204,18 +243,21 @@ const Header = () => {
           </li>
           <li>
             <a 
-              href="#contact" 
-              className={`mobile-nav-link ${activeSection === 'contact' ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}
+              href="#faq" 
+              className={`mobile-nav-link ${activeSection === 'faq' ? 'active' : ''}`}
+              onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
             >
-              Contact
+              FAQ
             </a>
           </li>
         </ul>
 
         <button 
           className="btn btn-primary mobile-cta"
-          onClick={() => scrollToSection('training')}
+          onClick={() => {
+            setMobileMenuOpen(false);
+            window.open('/register.html', '_blank', 'noopener,noreferrer');
+          }}
         >
           Join Program
         </button>

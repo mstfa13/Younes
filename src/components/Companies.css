@@ -56,18 +56,18 @@
   justify-content: center;
   height: 100px;
   min-width: 180px;
-  padding: 20px 30px;
-  background-color: var(--bg-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
   transition: all var(--transition-medium);
   cursor: pointer;
   flex-shrink: 0;
 }
 
 .company-logo-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  transform: none;
+  box-shadow: none;
 }
 
 .company-logo {
@@ -76,13 +76,35 @@
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: none;
-  opacity: 1;
-  transition: all var(--transition-medium);
+  /* Default: monochrome (black/white) look */
+  filter: grayscale(100%) contrast(1.15) brightness(0.9) saturate(0);
+  opacity: 0.8;
+  transition: transform var(--transition-medium), filter var(--transition-medium), opacity var(--transition-medium);
+}
+
+/* VOIS logo is smaller, so increase its size */
+.company-logo[src*="vois-new"] {
+  max-width: 200px;
+  max-height: 90px;
+  transform: scale(1.6);
+}
+
+.company-logo-wrapper:hover .company-logo[src*="vois-new"] {
+  transform: scale(1.7);
 }
 
 .company-logo-wrapper:hover .company-logo {
-  transform: scale(1.05);
+  /* On hover: restore colors and increase clarity */
+  transform: scale(1.06);
+  filter: none;
+  opacity: 1;
+}
+
+/* Keyboard accessibility: light up when focused */
+.company-logo:focus-visible,
+.company-logo-wrapper:focus-within .company-logo {
+  filter: none;
+  opacity: 1;
 }
 
 /* Placeholder Logo Styling */
@@ -140,6 +162,23 @@
 .companies-slider-wrapper::after {
   right: 0;
   background: linear-gradient(to left, var(--bg-secondary), transparent);
+}
+
+/* CTA Section */
+.companies-cta {
+  text-align: center;
+  margin-top: 60px;
+  padding: 32px;
+  background: linear-gradient(135deg, rgba(122, 0, 0, 0.05) 0%, rgba(122, 0, 0, 0.02) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.companies-cta-text {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-weight: 500;
 }
 
 /* Responsive Design */
