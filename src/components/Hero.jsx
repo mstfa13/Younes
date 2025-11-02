@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -68,7 +70,7 @@ const Hero = () => {
             </button>
             <button 
               className="btn btn-secondary hero-cta-secondary"
-              onClick={() => window.location.href = '/enterprise'}
+              onClick={() => navigate('/enterprise')}
             >
               For Businesses
             </button>

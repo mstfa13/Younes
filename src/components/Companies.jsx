@@ -1,9 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { FaBuilding } from 'react-icons/fa';
 import './Companies.css';
 
 const Companies = () => {
+  const navigate = useNavigate();
   // Company data - Using actual logo files
   const companies = [
     { name: 'VOIS', logo: '/images/companies/vois-new.png' },
@@ -97,7 +99,7 @@ const Companies = () => {
           <p className="companies-cta-text">Want to bring enterprise-level training to your organization?</p>
           <button 
             className="btn btn-primary"
-            onClick={() => window.location.href = '/enterprise'}
+            onClick={() => navigate('/enterprise')}
           >
             Contact Us
           </button>
