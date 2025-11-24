@@ -118,7 +118,7 @@ const Header = () => {
           }}
         >
           <div className="header-logo-icon">
-            AY
+            TB
           </div>
           <span className="header-logo-main">TechBytes</span>
           <span className="header-logo-sub">by Ahmed Younes</span>
@@ -151,11 +151,11 @@ const Header = () => {
             </li>
             <li>
               <a 
-                href="#training" 
-                className={`nav-link ${activeSection === 'training' ? 'active' : ''}`}
-                onClick={(e) => { e.preventDefault(); scrollToSection('training'); }}
+                href="#services" 
+                className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}
+                onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
               >
-                Program
+                Services
               </a>
             </li>
             <li>
@@ -182,7 +182,7 @@ const Header = () => {
             className="btn btn-primary header-cta"
             onClick={() => window.open('/register.html', '_blank', 'noopener,noreferrer')}
           >
-            Join Program
+            Join Services
           </button>
         </nav>
 
@@ -225,11 +225,11 @@ const Header = () => {
           </li>
           <li>
             <a 
-              href="#training" 
-              className={`mobile-nav-link ${activeSection === 'training' ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); scrollToSection('training'); }}
+              href="#services" 
+              className={`mobile-nav-link ${activeSection === 'services' ? 'active' : ''}`}
+              onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
             >
-              Program
+              Services
             </a>
           </li>
           <li>
@@ -259,7 +259,7 @@ const Header = () => {
             window.open('/register.html', '_blank', 'noopener,noreferrer');
           }}
         >
-          Join Program
+          Join Services
         </button>
       </div>
     </header>

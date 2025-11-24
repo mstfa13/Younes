@@ -1,9 +1,24 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaUserTie, FaAward, FaLightbulb, FaRocket, FaUsers, FaHeart, FaArrowRight } from 'react-icons/fa';
+import { 
+  FaLinkedin, 
+  FaFacebook, 
+  FaInstagram, 
+  FaTiktok, 
+  FaYoutube, 
+  FaArrowRight,
+  FaAward,
+  FaUsers,
+  FaRocket,
+  FaChartLine,
+  FaGraduationCap,
+  FaBriefcase,
+  FaLightbulb,
+  FaHandshake
+} from 'react-icons/fa';
 import Header from './Header';
 import Footer from './Footer';
-import './About.css';
+import './AboutPageModern.css';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -30,291 +45,248 @@ const AboutPage = () => {
     }
   };
 
+  const values = [
+    {
+      icon: <FaLightbulb />,
+      title: "Practical Learning",
+      description: "We believe in learning by doing. Every concept is tied to real-world applications."
+    },
+    {
+      icon: <FaUsers />,
+      title: "Community First",
+      description: "Building a supportive network where students grow together and help each other succeed."
+    },
+    {
+      icon: <FaRocket />,
+      title: "Career Focused",
+      description: "Every program is designed with one goal: getting you job-ready and market-competitive."
+    },
+    {
+      icon: <FaHandshake />,
+      title: "Transparency",
+      description: "Clear expectations, honest feedback, and realistic outcomes. No false promises."
+    }
+  ];
+
+  const achievements = [
+    {
+      icon: <FaUsers />,
+      number: "500+",
+      label: "Students Trained"
+    },
+    {
+      icon: <FaBriefcase />,
+      number: "10+",
+      label: "Years Experience"
+    },
+    {
+      icon: <FaAward />,
+      number: "50+",
+      label: "Projects Delivered"
+    },
+    {
+      icon: <FaChartLine />,
+      number: "95%",
+      label: "Success Rate"
+    }
+  ];
+
   return (
     <>
       <Header />
-      <div className="about-page">
+      <div className="about-page-modern">
         {/* Hero Section */}
-        <section className="about-hero">
-          <motion.div 
-            className="about-hero-content"
-            initial="hidden"
-            animate="visible"
-            variants={containerVariants}
-          >
-            <motion.h1 className="about-hero-title" variants={itemVariants}>
-              About TechnBytes & Ahmed Younes
-            </motion.h1>
-            <motion.p className="about-hero-subtitle" variants={itemVariants}>
-              Empowering the Next Generation of Tech Professionals
-            </motion.p>
-          </motion.div>
+        <section className="about-hero-modern">
+          <div className="about-hero-container">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="about-hero-content"
+            >
+              <p className="about-hero-subtitle">About TechBytes</p>
+              <h1 className="about-hero-title">
+                Empowering the Next Generation of <span className="highlight-text">Tech Leaders</span>
+              </h1>
+              <p className="about-hero-description">
+                TechBytes was founded with a simple mission: bridge the gap between education and 
+                employment by providing practical, industry-relevant training that transforms beginners 
+                into job-ready professionals.
+              </p>
+            </motion.div>
+          </div>
         </section>
 
-        {/* Main Content */}
-        <section className="about-full-content">
-          <motion.div 
-            className="about-full-container"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-          >
-            {/* The Story Section */}
-            <motion.div className="about-section" variants={itemVariants}>
-              <div className="about-section-icon">
-                <FaLightbulb />
-              </div>
-              <h2>The TechnBytes Story</h2>
-              <p>
-                TechnBytes was born from a simple yet powerful vision: to bridge the gap between 
-                academic learning and real-world industry demands. Founded by Ahmed Younes, a seasoned 
-                IT professional with over a decade of experience, TechnBytes represents a culmination 
-                of years of industry insights, lessons learned, and a deep passion for education.
-              </p>
-              <p>
-                The journey began when Ahmed recognized a critical challenge facing fresh graduates 
-                and career switchers - the struggle to transition from theoretical knowledge to 
-                practical, market-ready skills. Having witnessed countless talented individuals 
-                struggle to break into the tech industry despite their potential, Ahmed decided 
-                to create a transformative learning experience that would change this narrative.
-              </p>
-            </motion.div>
-
-            {/* Ahmed Younes Section */}
-            <motion.div className="about-section about-founder" variants={itemVariants}>
-              <div className="founder-header">
-                <div className="about-section-icon">
-                  <FaUserTie />
-                </div>
-                <div>
-                  <h2>Meet Ahmed Younes</h2>
-                  <p className="founder-title">Founder & Lead Instructor</p>
-                </div>
-              </div>
-              
-              <div className="founder-bio">
-                <p>
-                  Ahmed Younes brings over <strong>10+ years of hands-on experience</strong> in 
-                  software development, IT project management, and digital transformation. His career 
-                  spans across prestigious multinational companies including:
-                </p>
-                
-                <ul className="company-list">
-                  <li><strong>VOIS (Vodafone Intelligent Solutions)</strong> - Led enterprise-scale 
-                  digital transformation initiatives</li>
-                  <li><strong>Valeo</strong> - Managed cross-functional agile teams in automotive 
-                  software development</li>
-                  <li><strong>Etisalat</strong> - Drove telecommunications infrastructure projects</li>
-                  <li><strong>El Sewedy</strong> - Spearheaded IT modernization and system integration</li>
-                </ul>
-
-                <p>
-                  Throughout his career, Ahmed has:
-                </p>
-                <ul className="achievements-list">
-                  <li>Successfully delivered <strong>50+ enterprise-level projects</strong> across 
-                  various industries</li>
-                  <li>Managed project budgets exceeding <strong>$10 million</strong></li>
-                  <li>Led and mentored teams of up to <strong>30+ professionals</strong></li>
-                  <li>Trained and guided <strong>500+ aspiring tech professionals</strong></li>
-                  <li>Implemented agile methodologies in organizations transitioning from traditional 
-                  project management</li>
-                  <li>Achieved a <strong>95%+ project success rate</strong> in on-time, on-budget delivery</li>
-                </ul>
-              </div>
-            </motion.div>
-
-            {/* Expertise Section */}
-            <motion.div className="about-section" variants={itemVariants}>
-              <div className="about-section-icon">
-                <FaAward />
-              </div>
-              <h2>Areas of Expertise</h2>
-              <div className="expertise-grid">
-                <div className="expertise-item">
-                  <h3>Agile & Scrum Methodologies</h3>
-                  <p>Certified Scrum Master with extensive experience in agile transformation, 
-                  sprint planning, and iterative development processes.</p>
-                </div>
-                <div className="expertise-item">
-                  <h3>Project Management</h3>
-                  <p>Expert in end-to-end project lifecycle management, risk mitigation, stakeholder 
-                  communication, and resource optimization.</p>
-                </div>
-                <div className="expertise-item">
-                  <h3>Software Development</h3>
-                  <p>Proficient in modern development stacks, including React, Node.js, Python, 
-                  and cloud technologies (AWS, Azure).</p>
-                </div>
-                <div className="expertise-item">
-                  <h3>Digital Transformation</h3>
-                  <p>Strategic planning and execution of enterprise-wide digital transformation 
-                  initiatives, modernizing legacy systems.</p>
-                </div>
-                <div className="expertise-item">
-                  <h3>Team Leadership</h3>
-                  <p>Building and leading high-performing cross-functional teams, fostering 
-                  collaboration, and developing talent.</p>
-                </div>
-                <div className="expertise-item">
-                  <h3>Technical Training</h3>
-                  <p>Designing and delivering comprehensive training programs that produce 
-                  industry-ready professionals.</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Mission & Vision */}
-            <motion.div className="about-section" variants={itemVariants}>
-              <div className="about-section-icon">
-                <FaRocket />
-              </div>
-              <h2>Our Mission & Vision</h2>
-              <div className="mission-vision">
-                <div className="mission-box">
-                  <h3>Mission</h3>
-                  <p>
-                    To empower aspiring tech professionals with the skills, knowledge, and 
-                    confidence they need to transition from zero to market-ready, securing 
-                    their dream roles in the tech industry. We are committed to providing 
-                    hands-on, real-world training that bridges the gap between academic 
-                    learning and industry requirements.
-                  </p>
-                </div>
-                <div className="vision-box">
-                  <h3>Vision</h3>
-                  <p>
-                    To become the leading training institution recognized for producing 
-                    job-ready tech professionals who excel in their careers. We envision 
-                    a future where every graduate from TechnBytes is equipped with not 
-                    just technical skills, but also the soft skills, industry knowledge, 
-                    and professional network to thrive in the rapidly evolving tech landscape.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* What Sets Us Apart */}
-            <motion.div className="about-section" variants={itemVariants}>
-              <div className="about-section-icon">
-                <FaUsers />
-              </div>
-              <h2>What Sets TechnBytes Apart</h2>
-              <div className="differentiators">
-                <div className="diff-item">
-                  <h3>🎯 Real-World Focus</h3>
-                  <p>Every course is designed based on actual industry requirements and real 
-                  project scenarios from Ahmed's extensive professional experience.</p>
-                </div>
-                <div className="diff-item">
-                  <h3>🤝 Personalized Mentorship</h3>
-                  <p>Small batch sizes ensure individual attention, personalized feedback, 
-                  and tailored guidance for each student's career path.</p>
-                </div>
-                <div className="diff-item">
-                  <h3>💼 Job-Ready Training</h3>
-                  <p>Beyond technical skills, we focus on resume building, interview preparation, 
-                  and professional development to ensure career success.</p>
-                </div>
-                <div className="diff-item">
-                  <h3>🔄 Agile Learning</h3>
-                  <p>Courses are continuously updated to reflect the latest industry trends, 
-                  technologies, and best practices.</p>
-                </div>
-                <div className="diff-item">
-                  <h3>🌐 Industry Network</h3>
-                  <p>Leverage Ahmed's extensive professional network for internship opportunities, 
-                  job placements, and industry connections.</p>
-                </div>
-                <div className="diff-item">
-                  <h3>📈 Proven Track Record</h3>
-                  <p>With 500+ successfully trained professionals and a high placement rate, 
-                  our results speak for themselves.</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Training Sessions Image */}
-            <motion.div className="about-section training-session" variants={itemVariants}>
-              <div className="about-section-icon">
-                <FaUsers />
-              </div>
-              <h2>Our Training Sessions in Action</h2>
-              <div className="session-image-wrapper">
-                <img 
-                  src="/images/group.png" 
-                  alt="Ahmed Younes conducting a TechnBytes training session with students"
-                  className="session-group-photo"
-                />
-                <p className="session-caption">
-                  Ahmed Younes engaging with students during a hands-on training session, 
-                  demonstrating the personalized and interactive approach that defines TechnBytes.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Values Section */}
-            <motion.div className="about-section about-values" variants={itemVariants}>
-              <div className="about-section-icon">
-                <FaHeart />
-              </div>
-              <h2>Our Core Values</h2>
-              <div className="values-grid">
-                <div className="value-item">
-                  <strong>Excellence:</strong> We strive for the highest quality in everything 
-                  we do, from course content to student support.
-                </div>
-                <div className="value-item">
-                  <strong>Integrity:</strong> We maintain honest, transparent communication and 
-                  deliver on our promises.
-                </div>
-                <div className="value-item">
-                  <strong>Innovation:</strong> We continuously evolve our teaching methods and 
-                  curriculum to stay ahead of industry trends.
-                </div>
-                <div className="value-item">
-                  <strong>Empowerment:</strong> We believe in empowering students to take control 
-                  of their learning journey and career.
-                </div>
-                <div className="value-item">
-                  <strong>Community:</strong> We foster a supportive learning community where 
-                  students collaborate and grow together.
-                </div>
-                <div className="value-item">
-                  <strong>Results:</strong> We are committed to measurable outcomes and student 
-                  success in securing meaningful employment.
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Cosmic Call to Action */}
-            <motion.div 
-              className="faq-cosmic-cta"
-              variants={itemVariants}
+        {/* Story Section */}
+        <section className="about-story">
+          <div className="about-story-container">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={containerVariants}
+              className="about-story-content"
             >
-              <div className="cosmic-background">
-                <div className="stars"></div>
-                <div className="stars2"></div>
-                <div className="stars3"></div>
-              </div>
-              <div className="cosmic-content">
-                <h3 className="cosmic-title">Ready to Transform Your Future?</h3>
-                <p className="cosmic-subtitle">Join hundreds of professionals who've already started their journey</p>
-                <motion.a 
-                  href="/register.html" 
-                  target="_blank" 
-                  rel="noreferrer noopener"
-                  className="cosmic-button"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  <FaArrowRight className="cosmic-button-icon" />
-                  <span className="cosmic-button-text">Start Your Journey Now</span>
-                </motion.a>
+              <motion.div className="about-story-text" variants={itemVariants}>
+                <h2 className="section-title">The Story Behind TechBytes</h2>
+                <p className="section-description">
+                  Founded by <strong>Ahmed Younes</strong>, a seasoned IT Project Manager and Agile Scrum Master 
+                  with over 10 years of experience in leading digital transformation initiatives at multinational 
+                  corporations like Vodafone, Etisalat, and Valeo.
+                </p>
+                <p className="section-description">
+                  After witnessing countless talented individuals struggle to break into tech due to the gap 
+                  between academic learning and industry requirements, Ahmed decided to create a solution. 
+                  TechBytes was born from the belief that anyone with dedication and proper guidance can 
+                  build a successful career in technology.
+                </p>
+                <p className="section-description">
+                  What started as small training workshops has grown into a comprehensive program that has 
+                  helped over 500 professionals transition into tech roles, learn market-ready skills, and 
+                  advance their careers.
+                </p>
+              </motion.div>
+
+              <motion.div className="about-story-highlights" variants={itemVariants}>
+                <div className="highlight-card">
+                  <FaGraduationCap className="highlight-icon" />
+                  <h3>Expert-Led Training</h3>
+                  <p>Learn from someone who's been in the trenches and knows what it takes to succeed.</p>
+                </div>
+                <div className="highlight-card">
+                  <FaBriefcase className="highlight-icon" />
+                  <h3>Industry Experience</h3>
+                  <p>Curriculum built from real enterprise projects and actual job requirements.</p>
+                </div>
+                <div className="highlight-card">
+                  <FaRocket className="highlight-icon" />
+                  <h3>Proven Results</h3>
+                  <p>95% of our graduates successfully transition to tech roles within months.</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="about-values">
+          <div className="about-values-container">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={containerVariants}
+            >
+              <motion.div className="section-header" variants={itemVariants}>
+                <h2 className="section-title">Our Core Values</h2>
+                <p className="section-description">
+                  The principles that guide everything we do at TechBytes
+                </p>
+              </motion.div>
+
+              <div className="values-grid">
+                {values.map((value, index) => (
+                  <motion.div
+                    key={index}
+                    className="value-card"
+                    variants={itemVariants}
+                  >
+                    <div className="value-icon">{value.icon}</div>
+                    <h3 className="value-title">{value.title}</h3>
+                    <p className="value-description">{value.description}</p>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
-          </motion.div>
+          </div>
+        </section>
+
+        {/* Achievements Section */}
+        <section className="about-achievements">
+          <div className="about-achievements-container">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={containerVariants}
+              className="achievements-grid"
+            >
+              {achievements.map((achievement, index) => (
+                <motion.div
+                  key={index}
+                  className="achievement-card"
+                  variants={itemVariants}
+                >
+                  <div className="achievement-icon">{achievement.icon}</div>
+                  <div className="achievement-number">{achievement.number}</div>
+                  <div className="achievement-label">{achievement.label}</div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Connect Section */}
+        <section className="about-connect">
+          <div className="about-connect-container">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="connect-content"
+            >
+              <h2 className="connect-title">Connect with Ahmed Younes</h2>
+              <p className="connect-description">
+                Follow the journey, get insights, and stay updated with the latest in tech education
+              </p>
+              <div className="social-links-modern">
+                <a href="https://www.linkedin.com/in/ahmed-younes-ay/" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaLinkedin />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61582441811249" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaFacebook />
+                </a>
+                <a href="https://www.instagram.com/techbytes_by_younes" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaInstagram />
+                </a>
+                <a href="https://www.tiktok.com/@techbytes_by_younes" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaTiktok />
+                </a>
+                <a href="https://www.youtube.com/@techbytesbyyounes" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <FaYoutube />
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="about-cta-modern">
+          <div className="about-cta-container">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="cta-content-modern"
+            >
+              <h2 className="cta-title-modern">Ready to Transform Your Career?</h2>
+              <p className="cta-description-modern">
+                Join hundreds of professionals who've successfully transitioned into tech with TechBytes
+              </p>
+              <motion.a
+                href="/register.html"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="cta-button-modern"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Start Your Journey <FaArrowRight />
+              </motion.a>
+            </motion.div>
+          </div>
         </section>
       </div>
       <Footer />

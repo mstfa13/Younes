@@ -33,8 +33,36 @@ const EnterpriseForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Prepare form data for Google Sheets
+      const submissionData = {
+        companyName: formData.companyName,
+        industry: formData.industry,
+        contactName: formData.contactName,
+        jobTitle: formData.jobTitle,
+        email: formData.email,
+        phone: formData.phone,
+        companySize: formData.companySize,
+        trainingNeeds: formData.trainingNeeds,
+        numberOfEmployees: formData.numberOfEmployees,
+        timeline: formData.timeline,
+        message: formData.message
+      };
+
+      // Google Apps Script Web App URL for Enterprise Form
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbOPg1co5MkGdjhUp34DfLNEOtUk1Yjg7Y5hSI_omy8xNAxwC8U4c4JtsvDl9Rp_ZE/exec';
+
+      // Submit to Google Sheets
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Required for Google Apps Script
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submissionData)
+      });
+
+      // Show success message
       setIsSubmitting(false);
       setSubmitSuccess(true);
       
@@ -55,7 +83,12 @@ const EnterpriseForm = () => {
           message: ''
         });
       }, 3000);
-    }, 1500);
+
+    } catch (error) {
+      console.error('Error submitting enterprise form:', error);
+      setIsSubmitting(false);
+      alert('There was an error submitting your request. Please try again or contact us directly.');
+    }
   };
 
   const containerVariants = {

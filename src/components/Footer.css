@@ -156,11 +156,16 @@
   display: flex;
   gap: 24px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .footer-credit-item {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .footer-credit-item a {
@@ -170,6 +175,59 @@
 
 .footer-credit-item a:hover {
   color: var(--primary-color);
+}
+
+.footer-agency-link {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all var(--transition-medium);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+}
+
+.footer-agency-link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  border-radius: var(--radius-md);
+  transition: opacity var(--transition-medium);
+  z-index: -1;
+}
+
+.footer-agency-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  transition: width var(--transition-medium);
+}
+
+.footer-agency-link:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 2px 8px rgba(122, 0, 0, 0.3);
+}
+
+.footer-agency-link:hover::before {
+  opacity: 0.1;
+}
+
+.footer-agency-link:hover::after {
+  width: 100%;
 }
 
 /* Scroll to Top Button */

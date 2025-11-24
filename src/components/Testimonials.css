@@ -381,11 +381,11 @@
 }
 
 .testimonials-slider .slick-prev {
-  left: 0;
+  left: -400px;
 }
 
 .testimonials-slider .slick-next {
-  right: 0;
+  right: -400px;
 }
 
 .testimonials-slider .slick-disabled {

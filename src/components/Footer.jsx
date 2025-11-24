@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { FaLinkedin, FaFacebook, FaTiktok, FaYoutube, FaArrowUp } from 'react-icons/fa';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { FaLinkedin, FaFacebook, FaTiktok, FaYoutube, FaInstagram, FaArrowUp } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Show/hide scroll to top button based on scroll position
   useEffect(() => {
@@ -32,6 +35,28 @@ const Footer = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Handle About navigation
+  const handleAboutClick = (e) => {
+    e.preventDefault();
+    navigate('/about');
+  };
+
+  // Handle FAQ navigation - works from any page
+  const handleFAQClick = (e) => {
+    e.preventDefault();
+    
+    // Check if FAQ section exists on current page
+    const faqElement = document.getElementById('faq');
+    
+    if (faqElement) {
+      // If on home page, just scroll to FAQ
+      faqElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If on other page, navigate to home and scroll to FAQ
+      navigate('/', { state: { scrollToFAQ: true } });
     }
   };
 
@@ -73,6 +98,15 @@ const Footer = () => {
                   <FaFacebook />
                 </a>
                 <a 
+                  href="https://www.instagram.com/techbytes_by_younes" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="footer-social-link"
+                  aria-label="Instagram"
+                >
+                  <FaInstagram />
+                </a>
+                <a 
                   href="https://www.tiktok.com/@techbytes_by_younes" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -98,18 +132,18 @@ const Footer = () => {
               <h4 className="footer-links-title">Quick Links</h4>
               <ul className="footer-links-list">
                 <li>
-                  <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>
+                  <a href="/" onClick={(e) => { e.preventDefault(); navigate('/'); }}>
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
+                  <a href="/about" onClick={handleAboutClick}>
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#training" onClick={(e) => { e.preventDefault(); scrollToSection('training'); }}>
-                    Training Program
+                  <a href="#services" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>
+                    Services
                   </a>
                 </li>
                 <li>
@@ -126,7 +160,7 @@ const Footer = () => {
               <ul className="footer-links-list">
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#case-studies">Case Studies</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="/faq" onClick={handleFAQClick}>FAQ</a></li>
                 <li><a href="#support">Support</a></li>
               </ul>
             </div>
@@ -150,10 +184,15 @@ const Footer = () => {
             </p>
             <div className="footer-credits">
               <span className="footer-credit-item">
-                Built with React & Vite
-              </span>
-              <span className="footer-credit-item">
-                Designed with ❤️
+                Developed by{' '}
+                <a 
+                  href="https://fikrax.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="footer-agency-link"
+                >
+                  FikraX
+                </a>
               </span>
             </div>
           </div>

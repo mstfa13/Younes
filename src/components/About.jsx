@@ -46,7 +46,7 @@ const About = () => {
       >
         {/* Left Side - Image */}
         <motion.div className="about-image" variants={imageVariants}>
-          <div className="about-image-wrapper tilt-3d hover-lift hover-reveal">
+          <div className="about-image-wrapper">
             <img src="/images/About.jpg" alt="Ahmed Younes - TechnBytes Founder" />
           </div>
           <div className="about-image-accent"></div>
