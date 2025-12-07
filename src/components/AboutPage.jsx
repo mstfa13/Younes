@@ -76,7 +76,7 @@ const AboutPage = () => {
     },
     {
       icon: <FaBriefcase />,
-      number: "10+",
+      number: "5+",
       label: "Years Experience"
     },
     {
@@ -131,7 +131,7 @@ const AboutPage = () => {
                 <h2 className="section-title">The Story Behind TechBytes</h2>
                 <p className="section-description">
                   Founded by <strong>Ahmed Younes</strong>, a seasoned IT Project Manager and Agile Scrum Master 
-                  with over 10 years of experience in leading digital transformation initiatives at multinational 
+                  with over 5 years of experience in leading digital transformation initiatives at multinational 
                   corporations like Vodafone, Etisalat, and Valeo.
                 </p>
                 <p className="section-description">

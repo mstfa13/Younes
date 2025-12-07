@@ -73,7 +73,7 @@ const HowItWorks = () => {
           </motion.h2>
           <motion.p className="how-it-works-description" variants={itemVariants}>
             Our proven 4-step process takes you from beginner to job-ready in just 12 weeks. 
-            Here's exactly what to expect on your journey with TechnBytes.
+            Here's exactly what to expect on your journey with TechBytes.
           </motion.p>
         </div>
 

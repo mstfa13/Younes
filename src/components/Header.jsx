@@ -117,11 +117,11 @@ const Header = () => {
             }
           }}
         >
-          <div className="header-logo-icon">
-            TB
+          <img src="/images/techologon.png" alt="TechBytes Logo" className="header-logo-image" />
+          <div className="header-logo-text">
+            <span className="header-logo-main">TechBytes</span>
+            <span className="header-logo-sub">by Ahmed Younes</span>
           </div>
-          <span className="header-logo-main">TechBytes</span>
-          <span className="header-logo-sub">by Ahmed Younes</span>
         </a>
 
         {/* Desktop Navigation */}

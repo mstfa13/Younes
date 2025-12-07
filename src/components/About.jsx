@@ -47,7 +47,7 @@ const About = () => {
         {/* Left Side - Image */}
         <motion.div className="about-image" variants={imageVariants}>
           <div className="about-image-wrapper">
-            <img src="/images/About.jpg" alt="Ahmed Younes - TechnBytes Founder" />
+            <img src="/images/About.jpg" alt="Ahmed Younes - TechBytes Founder" />
           </div>
           <div className="about-image-accent"></div>
         </motion.div>
@@ -55,7 +55,7 @@ const About = () => {
         {/* Right Side - Content */}
         <div className="about-content">
           <motion.p className="about-subtitle" variants={itemVariants}>
-            About TechnBytes & Ahmed Younes
+            About TechBytes & Ahmed Younes
           </motion.p>
 
           <motion.h2 className="about-title" variants={itemVariants}>
@@ -63,7 +63,7 @@ const About = () => {
           </motion.h2>
 
           <motion.p className="about-text" variants={itemVariants}>
-            With over <strong>10+ years of experience</strong> in software and IT project management, 
+            With over <strong>5+ years of experience</strong> in software and IT project management, 
             Ahmed Younes has led cross-functional teams at leading multinational companies. His expertise 
             spans across <strong>agile methodologies</strong>, <strong>digital transformation</strong>, 
             and <strong>strategic planning</strong>.
@@ -71,16 +71,16 @@ const About = () => {
 
           {/* Stats Section */}
           <motion.div className="about-stats" variants={itemVariants}>
-            <div className="stat-item glass-card hover-lift scroll-reveal">
-              <span className="stat-number gradient-text-animated">10+</span>
+            <div className="stat-item">
+              <span className="stat-number">5+</span>
               <span className="stat-label">Years Experience</span>
             </div>
-            <div className="stat-item glass-card hover-lift scroll-reveal">
-              <span className="stat-number gradient-text-animated">50+</span>
+            <div className="stat-item">
+              <span className="stat-number">50+</span>
               <span className="stat-label">Projects Delivered</span>
             </div>
-            <div className="stat-item glass-card hover-lift scroll-reveal">
-              <span className="stat-number gradient-text-animated">500+</span>
+            <div className="stat-item">
+              <span className="stat-number">500+</span>
               <span className="stat-label">Professionals Trained</span>
             </div>
           </motion.div>

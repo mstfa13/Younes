@@ -13,7 +13,7 @@ const Solutions = () => {
     {
       icon: <FaUserTie />,
       title: "Expert Mentorship",
-      description: "Learn directly from professionals with 10+ years of experience who've been where you want to go."
+      description: "Learn directly from professionals with 5+ years of experience who've been where you want to go."
     },
     {
       icon: <FaChartLine />,
@@ -71,7 +71,7 @@ const Solutions = () => {
             Our Approach
           </motion.p>
           <motion.h2 className="solutions-title" variants={itemVariants}>
-            The <span className="highlight-text">TechnBytes Solution</span>
+            The <span className="highlight-text">TechBytes Solution</span>
           </motion.h2>
           <motion.p className="solutions-description" variants={itemVariants}>
             We've designed a comprehensive program that addresses every challenge you face, 

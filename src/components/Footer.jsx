@@ -71,8 +71,11 @@ const Footer = () => {
             {/* Brand Section */}
             <div className="footer-brand">
               <div className="footer-logo">
-                <span className="footer-logo-main">TechBytes</span>
-                <span className="footer-logo-sub">by Ahmed Younes</span>
+                <img src="/images/techologon.png" alt="TechBytes Logo" className="footer-logo-image" />
+                <div className="footer-logo-text">
+                  <span className="footer-logo-main">TechBytes</span>
+                  <span className="footer-logo-sub">by Ahmed Younes</span>
+                </div>
               </div>
               <p className="footer-tagline">
                 Empowering professionals to go from zero to market-ready in tech. 
