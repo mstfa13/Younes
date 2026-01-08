@@ -73,7 +73,7 @@ function ServicesPage() {
     {
       id: 'pm-program',
       icon: <FaGraduationCap />,
-      title: 'Software PM: Zero to Hero Program',
+      title: 'Interactive Software Agile Project Management Career Accelerator Program',
       tagline: 'From Trainee to Top Candidate in 8 Weeks',
       description: 'A comprehensive career transformation program that bridges the gap between theoretical knowledge and real-world expertise. Master Agile, Scrum, and software delivery practices exactly as they happen inside professional tech companies.',
       duration: '8 Weeks + 1 Month Career Support',

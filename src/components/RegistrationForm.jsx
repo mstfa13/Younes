@@ -10,6 +10,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
     phone: '',
     email: '',
     address: '',
+    program: '',
     currentJob: '',
     company: '',
     yearsOfExperience: '',
@@ -59,6 +60,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
         phone: formData.phone,
         email: formData.email,
         address: formData.address,
+        program: formData.program,
         currentJob: formData.currentJob,
         company: formData.company,
         yearsOfExperience: formData.yearsOfExperience,
@@ -132,7 +134,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
         {/* Header */}
         <div className="registration-header">
           <div>
-            <h2 className="registration-title">Join Interactive Software Agile Project Management Career Accelerator Program</h2>
+            <h2 className="registration-title">Join TechBytes Program</h2>
             <p className="registration-subtitle">Fill out the form below to start your journey</p>
           </div>
           <button 
@@ -209,6 +211,25 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
                   placeholder="Enter your city or address"
                   required
                 />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="program" className="form-label">Program of Interest *</label>
+                <select
+                  id="program"
+                  name="program"
+                  value={formData.program}
+                  onChange={handleChange}
+                  className="form-select"
+                  required
+                >
+                  <option value="">Select a program</option>
+                  <option value="Interactive Software Agile Project Management Career Accelerator Program">Interactive Software Agile Project Management Career Accelerator Program</option>
+                  <option value="Career Mentoring">Career Mentoring</option>
+                  <option value="Tech Career Consultation">Tech Career Consultation</option>
+                  <option value="Mock Interview Session">Mock Interview Session</option>
+                  <option value="Professional Resume Writing">Professional Resume Writing</option>
+                </select>
               </div>
             </div>
 

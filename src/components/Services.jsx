@@ -51,7 +51,7 @@ const Services = () => {
     },
     {
       icon: <FaGraduationCap />,
-      title: "Zero to Hero PM Program",
+      title: "Interactive Software Agile PM Career Accelerator",
       description: "Intensive 8-week program that transforms beginners into job-ready Product Managers. Includes 1-month post-program support for career launch.",
       features: [
         "8 weeks intensive training",
