@@ -100,7 +100,7 @@ function ServicesPage() {
       icon: <FaClipboardCheck />,
       title: 'Mock Interview Session',
       tagline: 'Practice Makes Perfect',
-      description: 'Experience a full professional interview simulation tailored to your target role. Go through real HR, technical, and behavioral questions with structured evaluation and expert feedback to prepare you for the real thing.',
+      description: 'Experience a full professional interview simulation tailored to your target role. Go through real HR, situational, and behavioral questions with structured evaluation and expert feedback to prepare you for the real thing.',
       duration: '1 Hour (30 min interview + 30 min feedback)',
       features: [
         'Realistic interview simulation for your target role',
@@ -123,7 +123,7 @@ function ServicesPage() {
       title: 'Professional Resume Writing',
       tagline: 'Stand Out to Recruiters',
       description: 'Get a professionally crafted, modern, and high-impact resume that reflects your true value. We help you position yourself as a top candidate with ATS-optimized formatting and achievement-based writing.',
-      duration: '2-3 Working Days',
+      duration: '1 Hour',
       features: [
         'Complete professional resume rewrite',
         'ATS-optimized format that passes screening systems',
