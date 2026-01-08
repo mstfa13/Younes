@@ -122,7 +122,7 @@ const EnterpriseForm = () => {
         {/* Header */}
         <motion.div className="enterprise-form-header" variants={itemVariants}>
           <h1 className="enterprise-form-title">
-            Enterprise Training <span className="highlight-text">Solutions</span>
+            Enterprise Agile Transformation <span className="highlight-text">Training Programs</span>
           </h1>
           <p className="enterprise-form-subtitle">
             Transform your team with customized training programs. Fill out the form below and our team will contact you within 24 hours.
