@@ -164,7 +164,7 @@ const Footer = () => {
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#case-studies">Case Studies</a></li>
                 <li><a href="/faq" onClick={handleFAQClick}>FAQ</a></li>
-                <li><a href="#support">Support</a></li>
+                <li><a href="https://wa.me/201153014236" target="_blank" rel="noopener noreferrer">Support</a></li>
               </ul>
             </div>
 
