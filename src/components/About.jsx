@@ -72,7 +72,7 @@ const About = () => {
           {/* Stats Section */}
           <motion.div className="about-stats" variants={itemVariants}>
             <div className="stat-item">
-              <span className="stat-number">5+</span>
+              <span className="stat-number">10+</span>
               <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat-item">
