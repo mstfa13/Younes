@@ -54,6 +54,14 @@ const Testimonials = () => {
       program: "TechBytes Graduate",
       avatar: "/images/testimonials/abdullah-khaled.jpg",
       linkedin: "https://www.linkedin.com/in/abdullah-khaled-3b3372321/"
+    },
+    {
+      quote: "The program gave me a clear roadmap for my career in tech. Ahmed's guidance and the structured curriculum helped me build the confidence and skills I needed to succeed in my role.",
+      name: "Raneem Khaled",
+      role: "Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/raneem.jpg",
+      linkedin: "https://www.linkedin.com/in/raneem-khaled-402449240/"
     }
   ];
 
