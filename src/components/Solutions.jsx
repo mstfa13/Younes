@@ -13,7 +13,7 @@ const Solutions = () => {
     {
       icon: <FaUserTie />,
       title: "Expert Mentorship",
-      description: "Learn directly from professionals with 5+ years of experience who've been where you want to go."
+      description: "Learn directly from professionals with 10+ years of experience who've been where you want to go."
     },
     {
       icon: <FaChartLine />,

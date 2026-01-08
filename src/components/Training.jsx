@@ -14,7 +14,7 @@ const Training = () => {
     {
       icon: <FaUsers />,
       title: "Expert Mentorship",
-      text: "Get personalized guidance from industry veterans with 5+ years of experience."
+      text: "Get personalized guidance from industry veterans with 10+ years of experience."
     },
     {
       icon: <FaRocket />,

@@ -63,7 +63,7 @@ const About = () => {
           </motion.h2>
 
           <motion.p className="about-text" variants={itemVariants}>
-            With over <strong>5+ years of experience</strong> in software and IT project management, 
+            With over <strong>10+ years of experience</strong> in software and IT project management, 
             Ahmed Younes has led cross-functional teams at leading multinational companies. His expertise 
             spans across <strong>agile methodologies</strong>, <strong>digital transformation</strong>, 
             and <strong>strategic planning</strong>.
