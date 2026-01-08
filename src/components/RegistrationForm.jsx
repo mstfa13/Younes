@@ -132,7 +132,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
         {/* Header */}
         <div className="registration-header">
           <div>
-            <h2 className="registration-title">Join TechBytes Program</h2>
+            <h2 className="registration-title">Join Interactive Software Agile Project Management Career Accelerator Program</h2>
             <p className="registration-subtitle">Fill out the form below to start your journey</p>
           </div>
           <button 
