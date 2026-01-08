@@ -280,16 +280,27 @@ function ServicesPage() {
                         <span key={idx} className="highlight-tag">{highlight}</span>
                       ))}
                     </div>
-                    <motion.a
-                      href="/register.html"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="service-cta-btn"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Get Started <FaArrowRight />
-                    </motion.a>
+                    {service.id === 'corporate-training' ? (
+                      <motion.button
+                        onClick={() => navigate('/enterprise')}
+                        className="service-cta-btn"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Get Started <FaArrowRight />
+                      </motion.button>
+                    ) : (
+                      <motion.a
+                        href="/register.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="service-cta-btn"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        Get Started <FaArrowRight />
+                      </motion.a>
+                    )}
                   </div>
                 </motion.div>
               ))}
