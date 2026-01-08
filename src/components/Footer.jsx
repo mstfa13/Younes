@@ -189,7 +189,7 @@ const Footer = () => {
               <span className="footer-credit-item">
                 Developed by{' '}
                 <a 
-                  href="https://fikrax.com" 
+                  href="https://www.linkedin.com/company/fikrax/posts/?feedView=all" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="footer-agency-link"
