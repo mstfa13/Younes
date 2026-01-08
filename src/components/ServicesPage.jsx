@@ -10,7 +10,6 @@ import {
   FaClipboardCheck,
   FaFileAlt,
   FaBuilding,
-  FaLaptopCode,
   FaArrowRight,
   FaCheckCircle,
   FaClock,
@@ -84,7 +83,8 @@ function ServicesPage() {
         'Real-world project portfolio with actual artifacts',
         'Professional toolkit: templates, RAID logs, sprint plans',
         'Career support: mock interviews, CV optimization, LinkedIn makeover',
-        'Private community access for networking and job leads'
+        'Private community access for networking and job leads',
+        '1:1 mentoring session for personalized guidance'
       ],
       whoIsItFor: [
         'Career shifters from Dev, QA, or Business Analysis roles',
@@ -94,27 +94,6 @@ function ServicesPage() {
       ],
       highlights: ['8-Week Intensive', 'Career Accelerator', 'Job-Ready Skills'],
       featured: true
-    },
-    {
-      id: 'interactive-pm',
-      icon: <FaLaptopCode />,
-      title: 'Interactive Agile PM Program',
-      tagline: 'Hands-On Real-World Agile Experience',
-      description: "An immersive program that simulates a real tech company environment. You'll live and breathe Agile, applying Scrum, Kanban, and SAFe principles to real-world software projects from day one through guided workshops and role-playing.",
-      duration: '4 Weeks (1 Month)',
-      features: [
-        'Run all Agile ceremonies: Daily Standups, Retros, Reviews, Planning',
-        'Create and manage real backlogs, sprints, and roadmaps',
-        'Learn software technical basics: SDLC, APIs, DevOps, databases',
-        'Handle real scenarios: difficult stakeholders, sprint delays, team conflicts',
-        'Develop leadership and communication skills for team influence'
-      ],
-      whoIsItFor: [
-        'Mid-level and Junior PMs/Scrum Masters wanting practical experience',
-        'Project Coordinators who know basics but lack confidence to lead',
-        'Anyone who wants real-world Agile experience, not just certificates'
-      ],
-      highlights: ['Live Simulations', 'Practical Training', 'Team Leadership']
     },
     {
       id: 'mock-interview',
