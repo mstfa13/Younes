@@ -17,21 +17,21 @@ const HowItWorks = () => {
       icon: <FaBook />,
       title: "Master the Fundamentals",
       description: "Build a solid foundation with our structured curriculum. Learn the core concepts and tools used by professional developers.",
-      duration: "Weeks 1-4"
+      duration: "Weeks 1-3"
     },
     {
       number: "03",
       icon: <FaLaptopCode />,
       title: "Build Real Projects",
       description: "Apply your knowledge by working on real-world projects. Create a portfolio that demonstrates your skills to potential employers.",
-      duration: "Weeks 5-10"
+      duration: "Weeks 3-8"
     },
     {
       number: "04",
       icon: <FaBriefcase />,
       title: "Land Your Dream Job",
       description: "Get career support including resume review, interview prep, and job placement assistance. We help you until you succeed.",
-      duration: "Weeks 11-12+"
+      duration: "Weeks 8-12"
     }
   ];
 
