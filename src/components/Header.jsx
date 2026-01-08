@@ -151,9 +151,13 @@ const Header = () => {
             </li>
             <li>
               <a 
-                href="#services" 
-                className={`nav-link ${activeSection === 'services' ? 'active' : ''}`}
-                onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
+                href="/services" 
+                className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  navigate('/services');
+                  setMobileMenuOpen(false);
+                }}
               >
                 Services
               </a>
@@ -225,9 +229,13 @@ const Header = () => {
           </li>
           <li>
             <a 
-              href="#services" 
-              className={`mobile-nav-link ${activeSection === 'services' ? 'active' : ''}`}
-              onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}
+              href="/services" 
+              className={`mobile-nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+              onClick={(e) => { 
+                e.preventDefault(); 
+                navigate('/services');
+                setMobileMenuOpen(false);
+              }}
             >
               Services
             </a>

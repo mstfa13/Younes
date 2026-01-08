@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FaLaptopCode, FaUsers, FaChalkboardTeacher, FaRocket, FaBriefcase, FaCertificate, FaArrowRight } from 'react-icons/fa';
+import { FaUserTie, FaComments, FaGraduationCap, FaMicrophone, FaFileAlt, FaBuilding, FaArrowRight } from 'react-icons/fa';
 import './Services.css';
 
 const Services = () => {
@@ -28,69 +28,69 @@ const Services = () => {
 
   const services = [
     {
-      icon: <FaLaptopCode />,
-      title: "Technical Skills Training",
-      description: "Master in-demand technologies including React, Node.js, Python, and cloud platforms. Build real-world projects that showcase your abilities to potential employers.",
+      icon: <FaUserTie />,
+      title: "Career Mentoring",
+      description: "One-on-one personalized mentoring sessions to guide your career in tech. Get expert advice on career paths, skill development, and professional growth.",
       features: [
-        "Hands-on coding projects",
-        "Modern tech stack training",
-        "Industry best practices",
-        "Code review & feedback"
+        "1-hour private sessions",
+        "Personalized career roadmap",
+        "Industry insights & guidance",
+        "Ongoing support"
       ]
     },
     {
-      icon: <FaChalkboardTeacher />,
-      title: "Agile & Scrum Methodology",
-      description: "Learn professional project management frameworks used by top tech companies. Understand sprint planning, daily standups, and iterative development.",
+      icon: <FaComments />,
+      title: "Tech Career Consultation",
+      description: "Comprehensive consultation sessions for career transition or advancement in tech. Perfect for those looking to break into or grow within the industry.",
       features: [
-        "Scrum fundamentals",
-        "Agile ceremonies",
-        "Sprint planning techniques",
-        "Team collaboration tools"
+        "Career path analysis",
+        "Skills gap assessment",
+        "Market trends insights",
+        "Action plan development"
       ]
     },
     {
-      icon: <FaUsers />,
-      title: "Soft Skills Development",
-      description: "Enhance your communication, presentation, and teamwork abilities. Learn how to work effectively in cross-functional teams and lead projects.",
+      icon: <FaGraduationCap />,
+      title: "Zero to Hero PM Program",
+      description: "Intensive 8-week program that transforms beginners into job-ready Product Managers. Includes 1-month post-program support for career launch.",
       features: [
-        "Communication skills",
-        "Presentation techniques",
-        "Team collaboration",
-        "Leadership development"
+        "8 weeks intensive training",
+        "Real-world PM projects",
+        "1-month career support",
+        "Certificate of completion"
       ]
     },
     {
-      icon: <FaBriefcase />,
-      title: "Career Preparation",
-      description: "Get job-ready with resume building, interview preparation, and portfolio development. Connect with our industry network for opportunities.",
+      icon: <FaMicrophone />,
+      title: "Mock Interview Sessions",
+      description: "Prepare for your tech interviews with realistic mock sessions. Get valuable feedback and tips to ace your next interview.",
       features: [
-        "Resume optimization",
-        "Mock interviews",
-        "LinkedIn profile building",
-        "Job search strategies"
+        "Real interview simulation",
+        "Behavioral & technical prep",
+        "Detailed feedback",
+        "Confidence building"
       ]
     },
     {
-      icon: <FaRocket />,
-      title: "Real-World Projects",
-      description: "Work on actual industry scenarios and build a professional portfolio. Gain practical experience that employers value.",
+      icon: <FaFileAlt />,
+      title: "Resume Writing Service",
+      description: "Professional resume writing and optimization to help you stand out. ATS-friendly formats that get you noticed by recruiters.",
       features: [
-        "Live project experience",
-        "Portfolio development",
-        "Client interaction",
-        "Problem-solving skills"
+        "ATS-optimized format",
+        "Keyword optimization",
+        "Professional layout",
+        "LinkedIn optimization"
       ]
     },
     {
-      icon: <FaCertificate />,
-      title: "Mentorship & Support",
-      description: "Receive personalized guidance from Ahmed Younes and ongoing support throughout your learning journey and beyond.",
+      icon: <FaBuilding />,
+      title: "Corporate Training",
+      description: "Customized training programs for organizations looking to upskill their teams. Scalable solutions for companies of all sizes.",
       features: [
-        "One-on-one mentorship",
-        "Weekly Q&A sessions",
-        "Community support",
-        "Lifetime access to materials"
+        "Customized curriculum",
+        "Flexible scheduling",
+        "Team-based learning",
+        "Progress tracking"
       ]
     }
   ];
@@ -112,6 +112,12 @@ const Services = () => {
             Comprehensive training programs designed to take you from zero to market-ready 
             with the skills, knowledge, and confidence needed to succeed in tech.
           </p>
+          <button 
+            className="btn btn-secondary services-learn-more"
+            onClick={() => navigate('/services')}
+          >
+            View All Services <FaArrowRight />
+          </button>
         </motion.div>
 
         {/* Services Grid */}

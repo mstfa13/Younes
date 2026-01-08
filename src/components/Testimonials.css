@@ -156,9 +156,14 @@
   font-style: italic;
   margin: 0;
   padding: 24px 28px 16px;
-  flex: 1;
-  display: flex;
-  align-items: center;
+  height: 140px;
+  min-height: 140px;
+  max-height: 140px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 
 /* Author Info */

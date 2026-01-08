@@ -80,19 +80,22 @@ const Hero = () => {
           <motion.div className="hero-trust-badge" variants={itemVariants}>
             <div className="trust-avatars">
               <div className="avatar-circle">
-                <img src="/images/testimonials/amr-mohamed.jpg" alt="Client" />
+                <img src="/images/testimonials/arwa.jpg" alt="Arwa Awad" />
               </div>
               <div className="avatar-circle">
-                <img src="/images/testimonials/abdullah-khaled.jpg" alt="Client" />
+                <img src="/images/testimonials/hana selim.jpg" alt="Hana Selim" />
               </div>
               <div className="avatar-circle">
-                <img src="/images/testimonials/mostafa-arkam.jpg" alt="Client" />
+                <img src="/images/testimonials/mohamed hashem.jpg" alt="Mohamed Hashem" />
               </div>
               <div className="avatar-circle">
-                <img src="/images/testimonials/omar-kandil.jpg" alt="Client" />
+                <img src="/images/testimonials/mona.jpg" alt="Mona Hewidy" />
               </div>
               <div className="avatar-circle">
-                <img src="/images/testimonials/hesham-ahmed.jpg" alt="Client" />
+                <img src="/images/testimonials/amr-mohamed.jpg" alt="Amr Mohamed" />
+              </div>
+              <div className="avatar-circle">
+                <img src="/images/testimonials/abdullah-khaled.jpg" alt="Abdullah Khaled" />
               </div>
             </div>
             <div className="trust-text">

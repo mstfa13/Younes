@@ -1,230 +1,348 @@
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import { 
-  FaLaptopCode, 
-  FaUsers, 
-  FaChalkboardTeacher, 
-  FaRocket, 
-  FaBriefcase, 
-  FaCertificate,
+  FaUserTie,
+  FaCompass,
+  FaGraduationCap,
+  FaClipboardCheck,
+  FaFileAlt,
+  FaBuilding,
+  FaLaptopCode,
   FaArrowRight,
-  FaCheckCircle
+  FaCheckCircle,
+  FaClock,
+  FaUsers,
+  FaStar
 } from 'react-icons/fa';
 import './ServicesPage.css';
 
 function ServicesPage() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const services = [
     {
+      id: 'career-mentoring',
+      icon: <FaUserTie />,
+      title: 'Career Mentoring',
+      tagline: 'Fast-Track Your Tech Career Growth',
+      description: 'A focused 1:1 mentoring experience to guide you confidently through your tech career. Move beyond generic advice to get a personalized roadmap based on your unique experience, strengths, and ambitions.',
+      duration: '1 Hour',
+      features: [
+        'Clear career target identification (PM, Scrum Master, Product Manager, Agile Coach)',
+        'Personalized skill gap analysis (soft & technical skills)',
+        'Immediate actionable steps you can implement next week',
+        'Enhanced productivity tactics tailored to your work environment',
+        'Solutions for current work challenges and blockers'
+      ],
+      whoIsItFor: [
+        'Professionals wanting to switch to leadership roles',
+        'Those feeling stuck or unnoticed in current positions',
+        'New Scrum Masters or Project Managers wanting to start strong',
+        'Anyone facing specific work challenges needing expert perspective'
+      ],
+      highlights: ['1-on-1 Session', 'Personalized Plan', 'Immediate Results']
+    },
+    {
+      id: 'career-consultation',
+      icon: <FaCompass />,
+      title: 'Tech Career Consultation',
+      tagline: 'Find Your Perfect Tech Career Path',
+      description: 'A customized one-to-one session designed to give you complete clarity on choosing the right career path in the tech industry. We analyze your background, skills, personality, and goals to identify the role that suits you best.',
+      duration: '1 Hour',
+      features: [
+        'Definitive analysis of best-fit tech roles (coding, non-coding, managerial)',
+        'Realistic action plan with time investment and steps required',
+        'Market intelligence on salary ranges and industry demands',
+        'Identification of internships and entry-points at large companies',
+        'Professional strength and gap analysis for your profile'
+      ],
+      whoIsItFor: [
+        'Fresh graduates unsure how to start in tech',
+        'Career shifters confused between different tech paths',
+        'Junior tech professionals wanting to shift roles strategically',
+        'Anyone interested in understanding all tech career options'
+      ],
+      highlights: ['Career Clarity', 'Market Insights', 'Personalized Roadmap']
+    },
+    {
+      id: 'pm-program',
+      icon: <FaGraduationCap />,
+      title: 'Software PM: Zero to Hero Program',
+      tagline: 'From Trainee to Top Candidate in 8 Weeks',
+      description: 'A comprehensive career transformation program that bridges the gap between theoretical knowledge and real-world expertise. Master Agile, Scrum, and software delivery practices exactly as they happen inside professional tech companies.',
+      duration: '8 Weeks + 1 Month Career Support',
+      features: [
+        'Industry frameworks: PMBOK (PMP-aligned), Scrum/CSM, SAFe 6.0',
+        'Technical fluency: SDLC, APIs, DevOps, cloud basics',
+        'Real-world project portfolio with actual artifacts',
+        'Professional toolkit: templates, RAID logs, sprint plans',
+        'Career support: mock interviews, CV optimization, LinkedIn makeover',
+        'Private community access for networking and job leads'
+      ],
+      whoIsItFor: [
+        'Career shifters from Dev, QA, or Business Analysis roles',
+        'Aspiring Project Leaders targeting Scrum Master or Agile PM roles',
+        'Current practitioners lacking formal Agile/PM training',
+        'Fresh graduates wanting to enter tech with confidence'
+      ],
+      highlights: ['8-Week Intensive', 'Career Accelerator', 'Job-Ready Skills'],
+      featured: true
+    },
+    {
+      id: 'interactive-pm',
       icon: <FaLaptopCode />,
-      title: 'Technical Skills Training',
-      description: 'Master in-demand technical skills through comprehensive, hands-on training programs.',
+      title: 'Interactive Agile PM Program',
+      tagline: 'Hands-On Real-World Agile Experience',
+      description: "An immersive program that simulates a real tech company environment. You'll live and breathe Agile, applying Scrum, Kanban, and SAFe principles to real-world software projects from day one through guided workshops and role-playing.",
+      duration: '4 Weeks (1 Month)',
       features: [
-        'Programming fundamentals (Java, Python, JavaScript)',
-        'Web development (HTML, CSS, React)',
-        'Database management and SQL',
-        'Version control with Git and GitHub',
-        'Cloud computing basics (AWS, Azure)'
+        'Run all Agile ceremonies: Daily Standups, Retros, Reviews, Planning',
+        'Create and manage real backlogs, sprints, and roadmaps',
+        'Learn software technical basics: SDLC, APIs, DevOps, databases',
+        'Handle real scenarios: difficult stakeholders, sprint delays, team conflicts',
+        'Develop leadership and communication skills for team influence'
       ],
-      highlights: ['Beginner to Advanced', 'Project-Based', 'Industry Standards']
+      whoIsItFor: [
+        'Mid-level and Junior PMs/Scrum Masters wanting practical experience',
+        'Project Coordinators who know basics but lack confidence to lead',
+        'Anyone who wants real-world Agile experience, not just certificates'
+      ],
+      highlights: ['Live Simulations', 'Practical Training', 'Team Leadership']
     },
     {
-      icon: <FaUsers />,
-      title: 'Agile & Scrum Methodology',
-      description: 'Learn modern project management frameworks used by top tech companies worldwide.',
+      id: 'mock-interview',
+      icon: <FaClipboardCheck />,
+      title: 'Mock Interview Session',
+      tagline: 'Practice Makes Perfect',
+      description: 'Experience a full professional interview simulation tailored to your target role. Go through real HR, technical, and behavioral questions with structured evaluation and expert feedback to prepare you for the real thing.',
+      duration: '1 Hour (30 min interview + 30 min feedback)',
       features: [
-        'Scrum framework and ceremonies',
-        'Sprint planning and execution',
-        'User story creation and estimation',
-        'Kanban and workflow optimization',
-        'Team collaboration best practices'
+        'Realistic interview simulation for your target role',
+        'Assessment of communication, leadership, and problem-solving',
+        'Evaluation of Agile, Scrum, and software concept understanding',
+        'Structured feedback using STAR, SOAR, CAR frameworks',
+        'Personalized improvement plan before your actual interview'
       ],
-      highlights: ['Certified Training', 'Real Scenarios', 'Team Projects']
+      whoIsItFor: [
+        'Aspiring Scrum Masters, Product Owners, and Project Managers',
+        'Career shifters moving into Agile roles',
+        'Anyone with an interview scheduled soon',
+        'Professionals preparing for international or Big Tech companies'
+      ],
+      highlights: ['Realistic Practice', 'Expert Feedback', 'Interview Ready']
     },
     {
-      icon: <FaChalkboardTeacher />,
-      title: 'Soft Skills Development',
-      description: 'Build essential professional skills that complement your technical expertise.',
+      id: 'resume-writing',
+      icon: <FaFileAlt />,
+      title: 'Professional Resume Writing',
+      tagline: 'Stand Out to Recruiters',
+      description: 'Get a professionally crafted, modern, and high-impact resume that reflects your true value. We help you position yourself as a top candidate with ATS-optimized formatting and achievement-based writing.',
+      duration: '2-3 Working Days',
       features: [
-        'Effective communication and presentation',
-        'Leadership and team management',
-        'Problem-solving and critical thinking',
-        'Time management and productivity',
-        'Professional networking strategies'
+        'Complete professional resume rewrite',
+        'ATS-optimized format that passes screening systems',
+        'Strong positioning for your target job roles',
+        'Achievement-based writing with measurable results',
+        'Professional branding suitable for international opportunities'
       ],
-      highlights: ['Interactive Workshops', 'Practical Exercises', 'Expert Mentorship']
+      whoIsItFor: [
+        'Job seekers not getting interview callbacks',
+        'Career shifters needing to reframe past experience',
+        'Tech professionals aiming for Big Tech or MNCs',
+        'Fresh graduates needing a professional first resume'
+      ],
+      highlights: ['ATS-Optimized', 'Modern Design', 'Results-Focused']
     },
     {
-      icon: <FaRocket />,
-      title: 'Career Preparation',
-      description: 'Get job-ready with comprehensive career support and interview preparation.',
+      id: 'corporate-training',
+      icon: <FaBuilding />,
+      title: 'Corporate Training',
+      tagline: 'Empower Your Teams with Agile',
+      description: 'Boost team productivity and project success with practical Agile training tailored to your company. Interactive workshops, hands-on exercises, and customized sessions that match your organization\'s challenges and goals.',
+      duration: 'Customizable (Half-day to 4 weeks)',
       features: [
-        'Resume building and optimization',
-        'LinkedIn profile enhancement',
-        'Technical interview preparation',
-        'Behavioral interview coaching',
-        'Salary negotiation strategies'
+        'Agile transformation readiness and mindset training',
+        'Improved project delivery using Scrum, Kanban, and scaling frameworks',
+        'Role clarity: Scrum Master, Product Owner, RTE, Delivery Lead',
+        'Hands-on training with Jira, Trello, Azure DevOps, Miro',
+        'Company-specific solutions based on your current workflow'
       ],
-      highlights: ['Mock Interviews', 'CV Reviews', 'Career Guidance']
-    },
-    {
-      icon: <FaBriefcase />,
-      title: 'Real-World Projects',
-      description: 'Work on industry-grade projects that showcase your skills to potential employers.',
-      features: [
-        'End-to-end project development',
-        'Agile workflow implementation',
-        'Code review and best practices',
-        'Portfolio-ready deliverables',
-        'Team collaboration experience'
+      whoIsItFor: [
+        'Companies transitioning from traditional to Agile delivery',
+        'Teams struggling with project delays or unclear processes',
+        'Startups scaling operations and delivery teams',
+        'Organizations preparing for digital transformation'
       ],
-      highlights: ['Portfolio Building', 'Industry Experience', 'Team Collaboration']
-    },
-    {
-      icon: <FaCertificate />,
-      title: 'Mentorship & Support',
-      description: 'Receive ongoing guidance from experienced industry professionals.',
-      features: [
-        '1-on-1 mentorship sessions',
-        'Career counseling and planning',
-        'Technical doubt resolution',
-        'Industry insights and trends',
-        'Lifetime alumni network access'
-      ],
-      highlights: ['Expert Mentors', 'Ongoing Support', 'Community Access']
+      highlights: ['Team Workshops', 'Customized Training', 'Measurable Results']
     }
   ];
 
-  const benefits = [
-    'Industry-experienced instructors',
-    'Flexible learning schedule',
-    'Hands-on practical training',
-    'Job placement assistance',
-    'Certificate of completion',
-    'Lifetime learning resources'
-  ];
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
 
   return (
     <>
       <Header />
       <div className="services-page">
         {/* Hero Section */}
-        <motion.section 
-          className="services-hero"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="services-hero-content">
-            <motion.h1 
-              className="services-hero-title"
+        <section className="services-page-hero">
+          <div className="services-hero-container">
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.8 }}
+              className="services-hero-content"
             >
-              Our Services
-            </motion.h1>
-            <motion.p 
-              className="services-hero-subtitle"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              Comprehensive training programs designed to transform you into a job-ready tech professional
-            </motion.p>
+              <p className="services-hero-subtitle">Our Services</p>
+              <h1 className="services-hero-title">
+                Transform Your <span className="highlight-text">Tech Career</span>
+              </h1>
+              <p className="services-hero-description">
+                From personalized mentoring to comprehensive training programs, we offer 
+                everything you need to succeed in the tech industry. Choose the service 
+                that matches your goals and start your transformation today.
+              </p>
+            </motion.div>
           </div>
-        </motion.section>
+        </section>
 
-        {/* Services Grid Section */}
-        <section className="services-page-content">
-          <div className="services-page-container">
-            <motion.div 
-              className="services-page-grid"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+        {/* Services List */}
+        <section className="services-list-section">
+          <div className="services-list-container">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={containerVariants}
+              className="services-list"
             >
               {services.map((service, index) => (
                 <motion.div
-                  key={index}
-                  className="service-page-card glass-card hover-lift"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  key={service.id}
+                  id={service.id}
+                  className={`service-detail-card ${service.featured ? 'featured' : ''}`}
+                  variants={itemVariants}
                 >
-                  <div className="service-page-icon">{service.icon}</div>
-                  <h3 className="service-page-title">{service.title}</h3>
-                  <p className="service-page-description">{service.description}</p>
+                  {service.featured && (
+                    <div className="featured-badge">
+                      <FaStar /> Most Popular
+                    </div>
+                  )}
                   
-                  <div className="service-page-highlights">
-                    {service.highlights.map((highlight, idx) => (
-                      <span key={idx} className="service-highlight-badge">
-                        {highlight}
-                      </span>
-                    ))}
+                  <div className="service-detail-header">
+                    <div className="service-detail-icon">
+                      {service.icon}
+                    </div>
+                    <div className="service-detail-info">
+                      <h2 className="service-detail-title">{service.title}</h2>
+                      <p className="service-detail-tagline">{service.tagline}</p>
+                      <div className="service-duration">
+                        <FaClock />
+                        <span>{service.duration}</span>
+                      </div>
+                    </div>
                   </div>
 
-                  <ul className="service-page-features">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx}>
-                        <FaCheckCircle className="feature-check-icon" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="service-detail-description">{service.description}</p>
+
+                  <div className="service-detail-content">
+                    <div className="service-features-section">
+                      <h3>What You'll Gain</h3>
+                      <ul className="service-features-list">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx}>
+                            <FaCheckCircle className="feature-check" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="service-audience-section">
+                      <h3>Who Is This For?</h3>
+                      <ul className="service-audience-list">
+                        {service.whoIsItFor.map((item, idx) => (
+                          <li key={idx}>
+                            <FaUsers className="audience-icon" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="service-detail-footer">
+                    <div className="service-highlights">
+                      {service.highlights.map((highlight, idx) => (
+                        <span key={idx} className="highlight-tag">{highlight}</span>
+                      ))}
+                    </div>
+                    <motion.a
+                      href="/register.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="service-cta-btn"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Get Started <FaArrowRight />
+                    </motion.a>
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
 
-            {/* Benefits Section */}
-            <motion.div 
-              className="services-benefits"
-              initial={{ opacity: 0, y: 40 }}
+        {/* CTA Section */}
+        <section className="services-page-cta">
+          <div className="services-cta-container">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="services-cta-content"
             >
-              <h2 className="benefits-title">Why Choose TechBytes?</h2>
-              <div className="benefits-grid">
-                {benefits.map((benefit, index) => (
-                  <motion.div
-                    key={index}
-                    className="benefit-item"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                  >
-                    <FaCheckCircle className="benefit-icon" />
-                    <span>{benefit}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* CTA Section */}
-            <motion.div 
-              className="services-page-cta"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="cta-title">Ready to Transform Your Career?</h2>
-              <p className="cta-text">
-                Join hundreds of successful graduates who have launched their tech careers with TechBytes
+              <h2>Not Sure Which Service Is Right for You?</h2>
+              <p>
+                Book a free consultation and let's discuss your goals. We'll help you 
+                choose the perfect path to accelerate your tech career.
               </p>
-              <button 
-                className="cta-button btn-primary"
-                onClick={() => navigate('/register')}
+              <motion.a
+                href="/register.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="services-cta-button"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
               >
-                Start Your Journey <FaArrowRight />
-              </button>
+                Book a Consultation <FaArrowRight />
+              </motion.a>
             </motion.div>
           </div>
         </section>

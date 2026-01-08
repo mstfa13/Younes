@@ -8,68 +8,52 @@ const Testimonials = () => {
   // Testimonials data
   const testimonials = [
     {
-      quote: "TechBytes helped me expand my scope and embrace advanced tech approaches. I now lead digital innovation projects that integrate both classical and modern methodologies.",
+      quote: "TechBytes transformed my career path completely. Ahmed's mentorship gave me the confidence and practical skills to take on leadership roles in tech projects that I never thought possible before.",
+      name: "Arwa Awad",
+      role: "Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/arwa.jpg",
+      linkedin: "https://www.linkedin.com/in/arwa-awad/"
+    },
+    {
+      quote: "The practical approach and real-world projects made all the difference. I'm now equipped with the essential project management skills and technical knowledge that companies are actively looking for.",
+      name: "Hana Selim",
+      role: "PMP® Certified Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/hana selim.jpg",
+      linkedin: "https://www.linkedin.com/in/hana-selim-pmp%C2%AE-242187147/"
+    },
+    {
+      quote: "Working with Ahmed helped me understand not just the technical aspects, but also how to think strategically about technology solutions and effectively lead cross-functional teams in complex projects.",
+      name: "Mohamed Hashem",
+      role: "Senior Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/mohamed hashem.jpg",
+      linkedin: "https://www.linkedin.com/in/mohamed-hashem-6679291b8/"
+    },
+    {
+      quote: "The comprehensive training and hands-on approach at TechBytes equipped me with the skills to confidently manage complex tech projects and drive meaningful results that matter in the industry.",
+      name: "Mona Hewidy",
+      role: "Technical Project Manager",
+      program: "TechBytes Graduate",
+      avatar: "/images/testimonials/mona.jpg",
+      linkedin: "https://www.linkedin.com/in/mona-hewidy/"
+    },
+    {
+      quote: "TechBytes helped me expand my scope and embrace advanced tech approaches. I now successfully lead digital innovation projects that integrate both classical and modern methodologies effectively.",
       name: "Amr Mohamed",
-      role: "Software Project Manager / Scrum Master at Connect Digital Solutions",
+      role: "Software Project Manager / Scrum Master",
       program: "TechBytes Graduate",
       avatar: "/images/testimonials/amr-mohamed.jpg",
       linkedin: "https://www.linkedin.com/in/amr-mohamed-0aa55810b/"
     },
     {
-      quote: "I have been leading teams on a journey to incorporate technology into our workflows. I am now a better leader for having taken this course and gained practical industry insights.",
+      quote: "Leading teams on a journey to incorporate technology into our workflows has been transformative. I am now a better leader for having taken this course and gained practical industry insights.",
       name: "Abdullah Khaled",
-      role: "Technical Project Manager at Digital Solutions",
+      role: "Technical Project Manager",
       program: "TechBytes Graduate",
       avatar: "/images/testimonials/abdullah-khaled.jpg",
       linkedin: "https://www.linkedin.com/in/abdullah-khaled-3b3372321/"
-    },
-    {
-      quote: "Working with Ahmed transformed my career. His mentorship helped me transition to leading technical projects with confidence and strategic thinking that drives real business value.",
-      name: "Mostafa Arkam",
-      role: "Project Manager",
-      program: "TechBytes Graduate",
-      avatar: "/images/testimonials/mostafa-arkam.jpg",
-      linkedin: "#"
-    },
-    {
-      quote: "The practical approach and real-world projects made all the difference. I'm now equipped with the project management skills and technical knowledge that companies are looking for.",
-      name: "Omar Kandil",
-      role: "IT Project Manager",
-      program: "TechBytes Graduate",
-      avatar: "/images/testimonials/omar-kandil.jpg",
-      linkedin: "#"
-    },
-    {
-      quote: "Ahmed's guidance helped me understand not just the technical aspects, but also how to think strategically about technology solutions and lead teams effectively.",
-      name: "Hesham Ahmed",
-      role: "Senior Project Manager",
-      program: "TechBytes Graduate",
-      avatar: "/images/testimonials/hesham-ahmed.jpg",
-      linkedin: "#"
-    },
-    {
-      quote: "The comprehensive training and hands-on approach at TechBytes equipped me with the skills to confidently manage complex projects and drive meaningful results in the tech industry.",
-      name: "Dalia Hassan",
-      role: "Project Manager",
-      program: "TechBytes Graduate",
-      avatar: "/images/testimonials/dalia.jpg",
-      linkedin: "#"
-    },
-    {
-      quote: "TechBytes provided me with the technical foundation and project management expertise I needed to excel in my career. The mentorship was invaluable in shaping my professional growth.",
-      name: "Osama Kamal",
-      role: "IT Project Manager",
-      program: "TechBytes Graduate",
-      avatar: "/images/testimonials/osama.jpg",
-      linkedin: "#"
-    },
-    {
-      quote: "The program transformed my approach to technology and project leadership. I now have the confidence and skills to tackle challenging projects and deliver exceptional results.",
-      name: "Rana Mahmoud",
-      role: "Technical Project Manager",
-      program: "TechBytes Graduate",
-      avatar: "/images/testimonials/rana.jpg",
-      linkedin: "#"
     }
   ];
 
