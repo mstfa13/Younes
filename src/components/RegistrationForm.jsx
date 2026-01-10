@@ -74,7 +74,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
       };
 
       // Google Apps Script Web App URL for Individuals Form
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxOyjeec6CFEV8LI8PvfJFvjh0DJsDOcjeeeanVVdwUpjzi8v5Gp5YfSL0nC3duTEkI/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz1o-FjmtdL1WcxX21z_a-Q1uWy9oGhbLl_MZdUHT-kE8HI-_ODYcr1uTbkYIIrOLNL/exec';
 
       // Submit to Google Sheets
       await fetch(GOOGLE_SCRIPT_URL, {
