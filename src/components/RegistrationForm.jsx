@@ -20,7 +20,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
     majorOther: '',
     englishLevel: '',
     howDidYouHear: '',
-    resume: null,
+    cvLink: '',
     setupPreference: '',
     motivation: ''
   });
@@ -69,6 +69,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
         major: formData.major === 'Other' ? formData.majorOther : formData.major,
         englishLevel: formData.englishLevel,
         howDidYouHear: formData.howDidYouHear,
+        cvLink: formData.cvLink,
         setupPreference: formData.setupPreference,
         motivation: formData.motivation
       };
@@ -107,7 +108,7 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
           majorOther: '',
           englishLevel: '',
           howDidYouHear: '',
-          resume: null,
+          cvLink: '',
           setupPreference: '',
           motivation: ''
         });
@@ -425,17 +426,18 @@ const RegistrationForm = ({ isOpen, onClose, inline = false }) => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="resume" className="form-label">Attach Your Resume/CV</label>
+                <label htmlFor="cvLink" className="form-label">CV/Resume Link</label>
                 <input
-                  type="file"
-                  id="resume"
-                  name="resume"
+                  type="url"
+                  id="cvLink"
+                  name="cvLink"
+                  value={formData.cvLink}
                   onChange={handleChange}
-                  className="form-input form-file"
-                  accept=".pdf,.doc,.docx"
+                  className="form-input"
+                  placeholder="https://drive.google.com/... or Dropbox link"
                 />
                 <small className="form-help-text">
-                  Upload 1 supported file: PDF or document. Max 10 MB.
+                  Upload your CV to Google Drive or Dropbox and paste the share link here.
                 </small>
               </div>
             </div>
