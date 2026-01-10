@@ -50,7 +50,7 @@ const EnterpriseForm = () => {
       };
 
       // Google Apps Script Web App URL for Enterprise Form
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxbOPg1co5MkGdjhUp34DfLNEOtUk1Yjg7Y5hSI_omy8xNAxwC8U4c4JtsvDl9Rp_ZE/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxtz5M01fR-ptz3riKIxX26HF4EEwpHEIz-Du-Vlx4Vu-MXHHBXvTu6Q0LPMHOXjcN5JA/exec';
 
       // Submit to Google Sheets
       await fetch(GOOGLE_SCRIPT_URL, {
